@@ -12,3 +12,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+/*
+<color name="gradientOrange">#ff8c00</color>
+    <color name ="darkOrange">#E85D04</color>
+    <color name ="endOrange">#DC2F02</color>
+
+ */
