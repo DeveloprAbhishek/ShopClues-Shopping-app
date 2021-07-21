@@ -89,10 +89,11 @@
         android:layout_height="40dp"
         android:layout_alignTop="@id/search_box"
         android:layout_toRightOf="@id/search_box"
-        android:background="#F2FB3C00"
+        android:background="#E85D04"
         android:src="@drawable/search_icon" />
 
     <ScrollView
+        android:id="@+id/top_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_box">
@@ -105,7 +106,7 @@
             android:layout_below="@id/search_box"
             android:layout_marginVertical="10dp"
             android:background="@drawable/bg1"
-            android:paddingVertical="20dp">
+            android:paddingVertical="15dp">
 
             <ImageView
                 android:id="@+id/userLogo"
@@ -146,18 +147,134 @@
                 android:text="SIGN IN"
                 android:textColor="#FFFFFF" />
 
+
         </RelativeLayout>
-
-
 
     </ScrollView>
 
+    <HorizontalScrollView
+        android:id="@+id/categoryScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_scroll">
+
+        <LinearLayout
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg1"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:weightSum="5">
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/sale_icon"
+                android:text="Mega Price Drop" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/mall_icon"
+                android:text="Prime Mall" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/headphone_icon"
+                android:text="Top Offers" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/mobile_icon"
+                android:text="Refurbished" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/fashion_icon"
+                android:text="Fashion" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/mobile_accessories_icon"
+                android:text="Mobile Accessories" />
+
+            <TextView
+
+                style="@style/categoryList"
+                android:drawableTop="@drawable/home_accessories_icon"
+                android:text="Home" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/men_fashion_icon"
+                android:text="Men's Fashion" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/footwear_icon"
+                android:text="Men's Footwear" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/women_fashion_icon"
+                android:text="Women's Fashion" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/cosmetic_icon"
+                android:text="Beauty &amp; Personal Care" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/kitchen_icon"
+                android:text="Kitchen &amp; Dining " />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/watch_icon"
+                android:text="Men's Watch" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/kid_store_icon"
+                android:text="Kid's Store" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/sport_fitness_health_icon"
+                android:text="Sports &amp; health" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/mobile_tablet_icon"
+                android:text="Mobile &amp;tablets" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/large_appliances_icon"
+                android:text="Large Appliances" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/food_icon"
+                android:text="Food &amp; Beverages" />
+
+            <TextView
+                style="@style/categoryList"
+                android:drawableTop="@drawable/bag_icon"
+                android:text="Backpack" />
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="8dp"
+        android:background="#F7ECF7F8"
         android:orientation="horizontal"
         android:weightSum="5">
 
