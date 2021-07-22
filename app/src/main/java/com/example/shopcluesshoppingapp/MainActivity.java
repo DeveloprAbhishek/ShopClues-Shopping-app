@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         layouts.add(new ProductModel(R.drawable.product26, "Men's Brown Ethnic Shoe", "399", "699", "50% off"));
         layouts.add(new ProductModel(R.drawable.product27, "Blue Heaven Lipstick", "266", "299", "11% off"));
         layouts.add(new ProductModel(R.drawable.product28, "Kaltron Diagonal Steel", "209", "599", "65% off"));
-        layouts.add(new ProductModel(R.drawable.product29, "Meia White Pink Kanchipuram Saree", "731", "2999", "75% off"));
+        layouts.add(new ProductModel(R.drawable.product29, "Meia White Pink Kanchipuram Saree", "730", "2999", "75% off"));
         layouts.add(new ProductModel(R.drawable.product30, "Set of 4 MultiColor Wall Sticker", "190", "499", "57% off"));
 //            layouts.add(new SmallBannerModel(R.drawable.small_banner_1));
 
