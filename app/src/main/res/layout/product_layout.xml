@@ -1,7 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E41E1E"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:id="@+id/product_card"
+        android:layout_width="200dp"
+        android:layout_height="370dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/product_bg"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/product_pic"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/product1" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/product_pic"
+            android:text="Pause solid blue Causal Shirt"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/rupees_icon"
+            android:text="599"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/actual_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/price"
+            android:drawableLeft="@drawable/rupees_icon"
+            android:text="799"
+            android:textColor="#000000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@id/price"
+            android:src="@drawable/price_cut" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_marginBottom="10dp"
+            android:text="70% off"
+            android:textColor="#02909F"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/buy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/discount"
+            android:background="@drawable/buy_btn_bg"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:text="Buy Now"
+            android:textColor="#F4F2F2"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/cart_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/discount"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@id/buy_btn"
+            android:background="@drawable/cart_btn_bg"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="10dp"
+            android:text="Add to Cart"
+            android:textColor="#3E3636"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
