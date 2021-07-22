@@ -21,7 +21,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_detail);
         Intent intent = getIntent();
         initViews();
-//        setProductView(intent);
+//        setProductDetailsView(intent);
 
     }
 
@@ -33,7 +33,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         discount = findViewById(R.id.discount);
     }
 
-    private void setProductView(Intent intent) {
+    private void setProductDetailsView(Intent intent) {
         productName.setText(intent.getStringExtra("name"));
         description.setText(intent.getStringExtra("desc"));
         price.setText(intent.getStringExtra("price"));
