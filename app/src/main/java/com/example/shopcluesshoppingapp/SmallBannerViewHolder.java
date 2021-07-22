@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SmallBannerViewHolder extends RecyclerView.ViewHolder {
     ImageView smallBanner;
+    private ProductClickListener productClickListener;
 
-    public SmallBannerViewHolder(@NonNull View itemView) {
+    public SmallBannerViewHolder(@NonNull View itemView, ProductClickListener productClickListener) {
         super(itemView);
+        this.productClickListener = productClickListener;
         smallBanner = itemView.findViewById(R.id.small_banner);
     }
 
