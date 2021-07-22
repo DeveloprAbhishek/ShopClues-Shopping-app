@@ -54,7 +54,12 @@
                android:scaleType="fitCenter"
                android:adjustViewBounds="true"
                android:src="@drawable/free_payment" />
-
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="103dp"
+               android:scaleType="fitCenter"
+               android:adjustViewBounds="true"
+               android:src="@drawable/offers" />
 
        </LinearLayout>
 
@@ -91,6 +96,7 @@
             android:id="@+id/tvAlreadyHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Already have an account?" />
 
         <TextView
@@ -100,6 +106,7 @@
             android:text="Login Now"
             android:textColor="@color/cyan"/>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -114,6 +121,8 @@
             android:gravity="center"
             android:text="Sign up with"/>
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
