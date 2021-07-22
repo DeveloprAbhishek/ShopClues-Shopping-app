@@ -642,11 +642,19 @@
             </HorizontalScrollView>
 
 
+            <ImageView
+                android:id="@+id/small_banner_1"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_below="@id/prime_mall_items"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/small_banner_1" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/prime_mall_items"
+                android:layout_below="@id/small_banner_1"
                 android:orientation="vertical" />
 
 
