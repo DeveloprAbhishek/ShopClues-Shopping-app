@@ -11,10 +11,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        SystemClock.sleep(4000);
-        Intent LoginIntent =new Intent(MainActivity.this,LogInActivity.class);
-        startActivity(LoginIntent);
-        finish();
+        setContentView(R.layout.activity_account);
+
     }
 }
