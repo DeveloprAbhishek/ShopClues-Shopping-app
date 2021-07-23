@@ -11,4 +11,10 @@
         <item name="background">@drawable/category_bg</item>
         <item name="android:layout_marginHorizontal">12dp</item>
     </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
 </resources>

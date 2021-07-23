@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivOfferImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item1" />
+
+        <TextView
+            android:id="@+id/tvOffersTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dermal Pearl Collagen 1 Face"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvOffersPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$59"
+                android:textColor="#E88C03"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/_57"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/_150"
+                android:textColor="#454545"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvOffersOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="62% off"
+            android:textColor="#24C4CA"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+        <RatingBar
+            android:id="@+id/rbOfferRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="3.0"
+            android:stepSize="0.1"
+            android:minHeight="20dp"
+            android:progressTint="#E88C03"
+            style="?android:attr/ratingBarStyleSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Order Qty : 1"
+            android:textSize="12dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

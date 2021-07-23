@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomNavHome"
+        android:enabled="true"
+        android:icon="@drawable/home_icon"
+        android:title="Home"/>
+    <item
+        android:id="@+id/bottomNavCategories"
+        android:enabled="true"
+        android:icon="@drawable/category_icon"
+        android:title="Categories"/>
+    <item
+        android:id="@+id/bottomNavMakeMoney"
+        android:enabled="true"
+        android:icon="@drawable/money_icon"
+        android:title="Categories"/>
+    <item
+        android:id="@+id/bottomNavOffers"
+        android:enabled="true"
+        android:icon="@drawable/offer_icon"
+        android:title="Categories"/>
+    <item
+        android:id="@+id/bottomNavAccount"
+        android:enabled="true"
+        android:icon="@drawable/account_icon"
+        android:title="Categories"/>
+</menu>
