@@ -1,7 +1,9 @@
 package com.example.shopcluesshoppingapp;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +15,14 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     private TextView product_price;
     private TextView product_actualPrice;
     private TextView product_discount;
+    private TextView description;
+    private ProductClickListener productClickListener;
+    private RelativeLayout productView;
+    private ProductModel productModel;
 
-    public ProductViewHolder(@NonNull View itemView) {
+    public ProductViewHolder(@NonNull View itemView, ProductClickListener productClickListener) {
         super(itemView);
+        this.productClickListener = productClickListener;
         initView(itemView);
     }
 
@@ -25,6 +32,15 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         product_price = itemView.findViewById(R.id.price);
         product_actualPrice = itemView.findViewById(R.id.actual_price);
         product_discount = itemView.findViewById(R.id.discount);
+        description = itemView.findViewById(R.id.product_desc);
+        productView = itemView.findViewById(R.id.product_card);
+        productView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                productClickListener.onProductClick(productModel, getAdapterPosition());
+
+            }
+        });
     }
 
     public void setProductData(ProductModel product) {

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CartLayout">
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF" />
+
+    <View
+
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_below="@id/topView"
+        android:background="#C2C2C2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/cart_arrow"
+        android:text="Cart"
+        android:textColor="#000"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/cart_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/topView"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/arrow_icon" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topView">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/cart_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/cart_card_bg">
+
+                <ImageView
+                    android:id="@+id/cart_productImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/product1" />
+
+                <TextView
+                    android:id="@+id/cart_product_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_toRightOf="@id/cart_productImage"
+                    android:text="Men's Blue Shirt Odoky Summer's Cotton Blend Blue Shrug For Men"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/remove_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/cart_product_description"
+                    android:layout_marginLeft="325dp"
+                    android:layout_toRightOf="@id/cart_productImage"
+                    android:paddingRight="-0dp"
+                    android:src="@drawable/remove_cart_icon" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/quantity_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cart_product"
+                android:layout_marginHorizontal="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/quantity_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/quantity_bg"
+                    android:paddingHorizontal="10dp"
+                    android:text="-"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/quantity_plush"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/quantity_bg"
+                    android:paddingHorizontal="10dp"
+                    android:text="+"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/quantity_section"
+                android:background="#C4C4C4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantity_section"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="#F3EFEF"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Total Price :"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:drawableLeft="@drawable/rupees_icon_2"
+                        android:text="599 Rs"
+                        android:textColor="#FF5203"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#C4C4C4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Total Order Value :"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:drawableLeft="@drawable/rupees_icon"
+                        android:text="1099 Rs"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Total Discount :"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="220dp"
+                        android:drawableLeft="@drawable/rupees_icon"
+                        android:text="500 Rs"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Total Shipping Charge :"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:text="Free"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Grand Total :"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:drawableLeft="@drawable/rupees_icon_2"
+                        android:text="599 Rs"
+                        android:textColor="#FF5203"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Inclusive of all the applicable taxes"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#C4C4C4" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/cart_continue_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/cart_btn_bg_2"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Continue Shopping"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+</RelativeLayout>

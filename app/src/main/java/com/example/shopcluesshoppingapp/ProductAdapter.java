@@ -11,10 +11,11 @@ import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<LayoutBaseModel> layoutBaseModelsList;
+    private ProductClickListener productClickListener;
 
-
-    public ProductAdapter(ArrayList<LayoutBaseModel> layoutBaseModelsList) {
+    public ProductAdapter(ArrayList<LayoutBaseModel> layoutBaseModelsList, ProductClickListener productClickListener) {
         this.layoutBaseModelsList = layoutBaseModelsList;
+        this.productClickListener = productClickListener;
     }
 
     @NonNull
@@ -24,10 +25,10 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         switch (viewType) {
             case 0:
                 View smallBannerView = LayoutInflater.from(parent.getContext()).inflate(R.layout.small_banner_layout, parent, false);
-                return new SmallBannerViewHolder(smallBannerView);
+                return new SmallBannerViewHolder(smallBannerView,productClickListener);
             case 1:
                 View productView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout, parent, false);
-                return new ProductViewHolder(productView);
+                return new ProductViewHolder(productView,productClickListener);
         }
         return null;
     }
