@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     android:background="#F7ECF7F8"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,10 +19,9 @@
                 android:id="@+id/search_box"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/search_bg"
                 android:hint="What is on your mind today?"
-                android:layout_marginTop="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="15dp"
                 android:textColor="#000000"
@@ -541,6 +539,7 @@
 
                     </LinearLayout>
 
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -569,17 +568,32 @@
 
                     </LinearLayout>
 
+
                 </LinearLayout>
 
+
             </HorizontalScrollView>
+
+
+            <ImageView
+                android:id="@+id/small_banner_1"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_below="@id/prime_mall_items"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/small_banner_1" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/prime_mall_items"
-                android:layout_alignParentBottom="true"
+                android:layout_below="@id/small_banner_1"
                 android:orientation="vertical" />
+
+
         </RelativeLayout>
+
     </ScrollView>
+
+
 </RelativeLayout>

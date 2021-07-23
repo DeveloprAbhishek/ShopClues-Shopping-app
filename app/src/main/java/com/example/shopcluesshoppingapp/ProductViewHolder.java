@@ -18,7 +18,6 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     private TextView description;
     private ProductClickListener productClickListener;
     private RelativeLayout productView;
-    private ProductModel productModel;
 
     public ProductViewHolder(@NonNull View itemView, ProductClickListener productClickListener) {
         super(itemView);
@@ -34,13 +33,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         product_discount = itemView.findViewById(R.id.discount);
         description = itemView.findViewById(R.id.product_desc);
         productView = itemView.findViewById(R.id.product_card);
-        productView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                productClickListener.onProductClick(productModel, getAdapterPosition());
 
-            }
-        });
     }
 
     public void setProductData(ProductModel product) {
@@ -49,5 +42,13 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         product_price.setText(product.getPrice());
         product_actualPrice.setText(product.getActualPrice());
         product_discount.setText(product.getDiscount());
+
+        productView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                productClickListener.onProductClick(product, getAdapterPosition());
+
+            }
+        });
     }
 }

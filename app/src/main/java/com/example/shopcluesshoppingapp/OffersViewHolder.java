@@ -6,6 +6,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -14,9 +15,13 @@ public class OffersViewHolder extends RecyclerView.ViewHolder {
     private ImageView mIvOfferImage;
     private TextView mTvOfferTitle, mTvOfferPrice, mTvOfferOff;
     private RatingBar mRbOfferRating;
+    private CardView mCvOfferCardView;
 
-    public OffersViewHolder(@NonNull @NotNull View itemView) {
+    private OffersClickListener offersClickListener;
+
+    public OffersViewHolder(@NonNull @NotNull View itemView, OffersClickListener offersClickListener) {
         super(itemView);
+        this.offersClickListener = offersClickListener;
         initViews(itemView);
     }
 
@@ -27,11 +32,20 @@ public class OffersViewHolder extends RecyclerView.ViewHolder {
         mTvOfferPrice = itemView.findViewById(R.id.tvOffersPrice);
         mTvOfferOff = itemView.findViewById(R.id.tvOffersOff);
         mRbOfferRating = itemView.findViewById(R.id.rbOfferRating);
+        mCvOfferCardView = itemView.findViewById(R.id.offerCardView);
     }
 
     void setOffersData(OffersModel model) {
         mTvOfferTitle.setText(model.getOfferTitle());
         mIvOfferImage.setImageResource(model.getImageUrl());
+
+        mCvOfferCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                offersClickListener.onOfferClick(model);
+
+            }
+        });
     }
 
 

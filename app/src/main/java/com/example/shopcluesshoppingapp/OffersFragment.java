@@ -1,5 +1,6 @@
 package com.example.shopcluesshoppingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  * Use the {@link OffersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OffersFragment extends Fragment {
+public class OffersFragment extends Fragment implements OffersClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -113,8 +114,16 @@ public class OffersFragment extends Fragment {
 
 
     private void setRecyclerView() {
-        OffersAdapter offersAdapter = new OffersAdapter(modelList);
+        OffersAdapter offersAdapter = new OffersAdapter(modelList, this);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(offersAdapter);
+    }
+
+    @Override
+    public void onOfferClick(OffersModel model) {
+        Intent goToOfferDetailPage = new Intent(getContext(), ProductDetail.class);
+        goToOfferDetailPage.putExtra("title", model.getOfferTitle().toString());
+        goToOfferDetailPage.putExtra("image", model.getImageUrl());
+        startActivity(goToOfferDetailPage);
     }
 }

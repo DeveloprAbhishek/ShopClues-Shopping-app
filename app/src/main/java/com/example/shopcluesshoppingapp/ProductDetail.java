@@ -40,7 +40,10 @@ public class ProductDetail extends AppCompatActivity {
         shareIcon = findViewById(R.id.share_icon);
         BuyButton = findViewById(R.id.ButtonBuy);
         CartButton = findViewById(R.id.ButtonAddToCart);
+        productImage = findViewById(R.id.details_image);
 
+        productName.setText(getIntent().getStringExtra("title"));
+        productImage.setImageResource(getIntent().getIntExtra("image",-1));
         favoriteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

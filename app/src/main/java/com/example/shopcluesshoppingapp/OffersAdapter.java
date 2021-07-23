@@ -16,16 +16,17 @@ import java.util.ArrayList;
 
 public class OffersAdapter extends RecyclerView.Adapter<OffersViewHolder> {
     ArrayList<OffersModel> offerList;
-
-    public OffersAdapter(ArrayList<OffersModel> offerList) {
+    private OffersClickListener offersClickListener;
+    public OffersAdapter(ArrayList<OffersModel> offerList, OffersClickListener offersClickListener) {
         this.offerList = offerList;
+        this.offersClickListener = offersClickListener;
     }
 
     @NonNull
     @Override
     public OffersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.offer_layout, parent, false);
-        return new OffersViewHolder(view);
+        return new OffersViewHolder(view, offersClickListener);
     }
 
     @Override
