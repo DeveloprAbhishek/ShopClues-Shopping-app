@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProductDetailActivity extends AppCompatActivity {
+public class ProductDetail extends AppCompatActivity {
     private ImageView productImage;
     private TextView productName;
     private TextView description;
@@ -25,9 +25,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
-        Intent intent = getIntent();
         initViews();
-//        setProductDetailsView(intent);
+//        setProductDetailsView();
 
     }
 
@@ -46,7 +45,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 favoriteIcon.setImageResource(R.drawable.favorite_icon);
-                Toast.makeText(ProductDetailActivity.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductDetail.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
             }
         });
         shareIcon.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +60,20 @@ public class ProductDetailActivity extends AppCompatActivity {
         CartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProductDetailActivity.this, "Item Added to the Cart", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ProductDetail.this, CartLayout.class);
+                Toast.makeText(ProductDetail.this, "Item Added to the Cart", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+
             }
         });
     }
 
-    private void setProductDetailsView(Intent intent) {
-        productName.setText(intent.getStringExtra("name"));
-        description.setText(intent.getStringExtra("desc"));
-        price.setText(intent.getStringExtra("price"));
-        actualPrice.setText(intent.getStringExtra("actualPrice"));
-        discount.setText(intent.getStringExtra("discount"));
+    private void setProductDetailsView() {
+        productImage.setImageResource(getIntent().getIntExtra("img", 0));
+        productName.setText(getIntent().getStringExtra("name"));
+        description.setText(getIntent().getStringExtra("desc"));
+        price.setText(getIntent().getStringExtra("price"));
+        actualPrice.setText(getIntent().getStringExtra("actualPrice"));
+        discount.setText(getIntent().getStringExtra("discount"));
     }
 }

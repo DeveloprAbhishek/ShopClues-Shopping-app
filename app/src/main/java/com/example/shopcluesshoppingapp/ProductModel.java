@@ -47,4 +47,8 @@ public class ProductModel extends LayoutBaseModel {
     int getViewType() {
         return TYPE_PRODUCT;
     }
+
+    public String getDescription() {
+        return description;
+    }
 }

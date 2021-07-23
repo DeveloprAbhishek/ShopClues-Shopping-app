@@ -2,8 +2,10 @@ package com.example.shopcluesshoppingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
 
     private RecyclerView recyclerView;
     private ArrayList<LayoutBaseModel> layouts;
+    private ArrayList<ProductModel> productModels;
     private ImageView productImage;
     private TextView productName;
     private TextView description;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
         price = findViewById(R.id.price);
         actualPrice = findViewById(R.id.actual_price);
         discount = findViewById(R.id.discount);
-        buyButton = findViewById(R.id.ButtonBuy);
-        addToCartButton = findViewById(R.id.ButtonAddToCart);
+        buyButton = findViewById(R.id.buy_btn);
+
     }
 
 
@@ -114,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
                 "", "730", "2999", "75% off"));
         layouts.add(new ProductModel(R.drawable.product30, "Set of 4 MultiColor Wall Sticker",
                 "EJA Art brings here an interesting Wall stickers (DIY) to decorate your walls, paste at your desired place. Package Include: 1 x PVC Vinyl sticker Material: PVC Vinyl Compatible Features: PVC, Non-toxic, Eco-friendly and Waterproof. Occasion:Ideal for Family Lounge, Bedroom, Cafe and Restaurant, Kids room, Nursery Room etc. Installation prompt: Please keep the wall clean before pasting. First according to the template on the ground, put the product well. Suggest to take a small piece of component test whether suitable for me tope. Press firmly to squeeze out any air bubbles. Cautions: Do not apply on wet walls. Do not apply on ash surfaces. Do not apply on broken surfaces. ", "190", "499", "57% off"));
-//            layouts.add(new SmallBannerModel(R.drawable.small_banner_1));
 
     }
 
@@ -129,14 +132,24 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
 
     @Override
     public void onProductClick(LayoutBaseModel layoutBaseModel, int position) {
-        Intent intent = new Intent(this, ProductDetailActivity.class);
-//        intent.putExtra("img", .getText().toString());
-//        intent.putExtra("name", productName.getText().toString());
-//        intent.putExtra("desc", description.getText().toString());
-//        intent.putExtra("price",price.getText().toString());
-//        intent.putExtra("actualPrice", actualPrice.getText().toString());
-//        intent.putExtra("discount", discount.getText().toString());
-////        intent.putExtras(productImage.getImageTintMode());
+        Intent intent = new Intent(this, ProductDetail.class);
+        buyButton = findViewById(R.id.buy_btn);
+        addToCartButton = findViewById(R.id.cart_btn);
+        addToCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToCart = new Intent(MainActivity.this, CartLayout.class);
+                Toast.makeText(MainActivity.this, "Item Added to the Cart", Toast.LENGTH_LONG).show();
+                startActivity(goToCart);
+            }
+        });
+
+//        intent.putExtra("img", productModels.get(position).getImage());
+//        intent.putExtra("name", productModels.get(position).getName());
+//        intent.putExtra("desc", productModels.get(position).getDescription());
+//        intent.putExtra("price", productModels.get(position).getPrice());
+//        intent.putExtra("actualPrice", productModels.get(position).getActualPrice());
+//        intent.putExtra("discount", productModels.get(position).getDiscount());
         startActivity(intent);
     }
 }

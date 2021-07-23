@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#F7ECF7F8"
     android:orientation="vertical"
-    tools:context=".ProductDetailActivity">
+    tools:context=".ProductDetail">
 
     <ScrollView
         android:layout_width="match_parent"
