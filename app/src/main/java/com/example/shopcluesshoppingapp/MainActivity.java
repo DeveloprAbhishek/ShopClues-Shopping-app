@@ -122,7 +122,6 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
     private void setRecyclerView() {
         ProductAdapter productAdapter = new ProductAdapter(layouts, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(productAdapter);
     }
@@ -131,12 +130,13 @@ public class MainActivity extends AppCompatActivity implements ProductClickListe
     @Override
     public void onProductClick(LayoutBaseModel layoutBaseModel, int position) {
         Intent intent = new Intent(this, ProductDetailActivity.class);
-        intent.putExtra("name", layouts.toString());
-        intent.putExtra("desc", layouts.toString());
-        intent.putExtra("price", layouts.toString());
-        intent.putExtra("actualPrice", layouts.toString());
-        intent.putExtra("discount", layouts.toString());
-//        intent.putExtras(productImage.getImageTintMode());
+//        intent.putExtra("img", .getText().toString());
+//        intent.putExtra("name", productName.getText().toString());
+//        intent.putExtra("desc", description.getText().toString());
+//        intent.putExtra("price",price.getText().toString());
+//        intent.putExtra("actualPrice", actualPrice.getText().toString());
+//        intent.putExtra("discount", discount.getText().toString());
+////        intent.putExtras(productImage.getImageTintMode());
         startActivity(intent);
     }
 }

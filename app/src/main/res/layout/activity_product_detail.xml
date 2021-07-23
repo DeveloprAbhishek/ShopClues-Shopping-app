@@ -116,6 +116,7 @@
                 android:background="#000000" />
 
             <TextView
+                android:id="@+id/detail_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/detail_actual_price"
@@ -161,6 +162,27 @@
                     android:src="@drawable/hal_star_rate_icon" />
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/favorite_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_desc"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="100dp"
+                android:layout_toRightOf="@id/detail_discount"
+                android:src="@drawable/favorite_blank_icon" />
+
+            <ImageView
+                android:id="@+id/share_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/favorite_icon"
+                android:layout_alignLeft="@id/favorite_icon"
+                android:layout_marginVertical="20dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="39dp"
+                android:src="@drawable/share_icon" />
 
             <TextView
                 android:id="@+id/size_section"
@@ -250,26 +272,26 @@
         <TextView
             android:id="@+id/ButtonBuy"
             android:layout_width="wrap_content"
-            android:paddingVertical="10dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="#000000"
             android:background="@drawable/buy_btn_bg_2"
             android:gravity="center_horizontal"
+            android:paddingVertical="10dp"
             android:text="Buy Now"
+            android:textColor="#000000"
             android:textSize="25dp" />
 
 
         <TextView
             android:id="@+id/ButtonAddToCart"
             android:layout_width="wrap_content"
-            android:paddingVertical="10dp"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
             android:layout_weight="1"
             android:background="@drawable/cart_btn_bg_2"
             android:gravity="center_horizontal"
+            android:paddingVertical="10dp"
             android:text="Add to Cart"
+            android:textColor="#FFFFFF"
             android:textSize="25dp" />
     </LinearLayout>
 </RelativeLayout>
