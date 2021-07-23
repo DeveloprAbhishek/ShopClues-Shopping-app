@@ -17,10 +17,12 @@
 
             <EditText
                 android:id="@+id/search_box"
-                android:layout_width="340dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginBottom="2dp"
                 android:background="@drawable/search_bg"
+                android:focusable="false"
                 android:hint="What is on your mind today?"
                 android:paddingVertical="10dp"
                 android:paddingLeft="15dp"
@@ -37,71 +39,11 @@
                 android:src="@drawable/search_icon" />
 
 
-            <ScrollView
-                android:id="@+id/top_scroll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/search_box">
-
-                <RelativeLayout
-
-                    android:id="@+id/signIn_force"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/search_box"
-                    android:layout_marginVertical="10dp"
-                    android:background="@drawable/bg1"
-                    android:paddingVertical="15dp">
-
-                    <ImageView
-                        android:id="@+id/userLogo"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="30dp"
-                        android:background="@drawable/user_logo_bg"
-                        android:src="@drawable/user_logo_icon" />
-
-                    <TextView
-                        android:id="@+id/SF_line1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/userLogo"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/userLogo"
-                        android:text="You are missing out"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/SF_line2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/SF_line1"
-                        android:layout_alignLeft="@id/SF_line1"
-                        android:layout_toRightOf="@id/userLogo"
-                        android:text="Sign in fir the best offers"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/sign_btn_bg"
-                        android:padding="10dp"
-                        android:text="SIGN IN"
-                        android:textColor="#FFFFFF" />
-
-
-                </RelativeLayout>
-
-            </ScrollView>
-
             <HorizontalScrollView
                 android:id="@+id/categoryScroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/top_scroll">
+                android:layout_below="@id/search_box">
 
                 <LinearLayout
                     android:id="@+id/category"
@@ -316,6 +258,7 @@
                         android:layout_margin="10dp"
                         android:background="#F4F1F1"
                         android:orientation="vertical">
+
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -574,20 +517,245 @@
 
             </HorizontalScrollView>
 
-
-            <ImageView
-                android:id="@+id/small_banner_1"
+            <LinearLayout
+                android:id="@+id/small_banner"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/prime_mall_items"
-                android:layout_marginVertical="10dp"
-                android:src="@drawable/small_banner_1" />
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/small_banner_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_1" />
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:layout_width="410dp"
+                    android:layout_height="210dp"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/offer_5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/bannerView"
+                    android:layout_marginLeft="10dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:text="Deal of the Day"
+                    android:textColor="#5A5555"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/trending1" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/offer6" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/offer7" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_5" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_3" />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:layout_width="390dp"
+                    android:layout_height="210dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/offer_3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/bannerView"
+                    android:layout_marginLeft="10dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:text="Latest Trend"
+                    android:textColor="#5A5555"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/offer8" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_4" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_6" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:layout_width="410dp"
+                    android:layout_height="210dp"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/offer_2" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_7" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_8" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:layout_width="410dp"
+                    android:layout_height="210dp"
+                    android:layout_marginVertical="10dp"
+                    android:src="@drawable/offer_4" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_9" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/small_banner_10" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/small_banner_1"
+                android:layout_below="@id/small_banner"
                 android:orientation="vertical" />
 
 

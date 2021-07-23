@@ -2,7 +2,7 @@ package com.example.shopcluesshoppingapp;
 
 public class CategoryModel {
     private String mainCategoryName, subCategoryName1, subCategoryName2, subCategoryName3, subCategoryName4, subCategoryName5, subCategoryName6;
-    private int subCategoryImage1, subCategoryImage2, subCategoryImage3, subCategoryImage4,subCategoryImage5 ,subCategoryImage6;
+    private int subCategoryImage1, subCategoryImage2, subCategoryImage3, subCategoryImage4, subCategoryImage5, subCategoryImage6;
 
 
     public CategoryModel(String mainCategoryName, String subCategoryName1, String subCategoryName2, String subCategoryName3,

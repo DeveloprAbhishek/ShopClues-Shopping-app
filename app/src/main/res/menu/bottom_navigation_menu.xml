@@ -5,25 +5,25 @@
         android:id="@+id/bottomNavHome"
         android:enabled="true"
         android:icon="@drawable/home_icon"
-        android:title="Home"/>
+        android:title="Home" />
     <item
         android:id="@+id/bottomNavCategories"
         android:enabled="true"
         android:icon="@drawable/category_icon"
-        android:title="Categories"/>
+        android:title="Categories" />
     <item
         android:id="@+id/bottomNavMakeMoney"
         android:enabled="true"
         android:icon="@drawable/money_icon"
-        android:title="Categories"/>
+        android:title="Make Money" />
     <item
         android:id="@+id/bottomNavOffers"
         android:enabled="true"
         android:icon="@drawable/offer_icon"
-        android:title="Categories"/>
+        android:title="Offers" />
     <item
         android:id="@+id/bottomNavAccount"
         android:enabled="true"
         android:icon="@drawable/account_icon"
-        android:title="Categories"/>
+        android:title="Categories" />
 </menu>

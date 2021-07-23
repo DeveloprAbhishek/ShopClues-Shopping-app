@@ -26,7 +26,7 @@ public class ProductDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
         initViews();
-//        setProductDetailsView();
+        setProductDetailsView();
 
     }
 
@@ -41,9 +41,6 @@ public class ProductDetail extends AppCompatActivity {
         BuyButton = findViewById(R.id.ButtonBuy);
         CartButton = findViewById(R.id.ButtonAddToCart);
         productImage = findViewById(R.id.details_image);
-
-        productName.setText(getIntent().getStringExtra("title"));
-        productImage.setImageResource(getIntent().getIntExtra("image",-1));
         favoriteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
