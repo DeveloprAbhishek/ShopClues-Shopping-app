@@ -7,34 +7,19 @@
     android:orientation="vertical"
     tools:context=".ProductDetail">
 
-    <ScrollView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp">
-
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white" >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingVertical="10dp">
-
-            <View
-                android:id="@+id/topView"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#FFFFFF" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/topView"
-                android:background="#C2C2C2" />
-
+            android:layout_height="match_parent">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/topView"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/arrow_icon" />
+                android:src="@drawable/main_logo" />
 
             <ImageView
 
@@ -53,12 +38,25 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/cart_icon" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/details_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/topView"
                 android:layout_marginVertical="10dp"
                 android:src="@drawable/product1" />
 

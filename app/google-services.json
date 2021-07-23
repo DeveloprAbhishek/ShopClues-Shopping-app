@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956053266847",
+    "project_id": "shopclues-shopping-app",
+    "storage_bucket": "shopclues-shopping-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956053266847:android:1fb503395eec2b1a869daa",
+        "android_client_info": {
+          "package_name": "com.example.shopcluesshoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956053266847-tjqi3cbk60j8t3ftjgldfqtqnrsl8rqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjY-eUFZJDDEcV7JzzH7-ZdSj3xsU7Dvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956053266847-tjqi3cbk60j8t3ftjgldfqtqnrsl8rqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

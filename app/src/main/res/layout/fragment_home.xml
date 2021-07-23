@@ -5,87 +5,20 @@
     android:layout_height="match_parent"
     android:background="#F7ECF7F8"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <View
-                android:id="@+id/topView"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#FFFFFF" />
-
-            <View
-                android:id="@+id/hBurger_1"
-                android:layout_width="25dp"
-                android:layout_height="2dp"
-                android:layout_alignLeft="@id/topView"
-                android:layout_alignTop="@id/topView"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:background="#07B6DF" />
-
-            <View
-                android:id="@+id/hBurger_2"
-                android:layout_width="25dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/hBurger_1"
-                android:layout_alignLeft="@id/topView"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#07B6DF" />
-
-            <View
-                android:id="@+id/hBurger_3"
-                android:layout_width="25dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/hBurger_2"
-                android:layout_alignLeft="@id/topView"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#07B6DF" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/hBurger_1"
-                android:src="@drawable/main_logo" />
-
-
-            <ImageView
-
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_alignTop="@id/cart_icon"
-                android:layout_toLeftOf="@id/cart_icon"
-                android:src="@drawable/notification_icon" />
-
-
-            <ImageView
-                android:id="@+id/cart_icon"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/cart_icon" />
-
-
             <EditText
                 android:id="@+id/search_box"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/topView"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/search_bg"
                 android:hint="What is on your mind today?"
@@ -661,68 +594,6 @@
         </RelativeLayout>
 
     </ScrollView>
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        android:weightSum="5">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/home_icon"
-            android:gravity="center"
-            android:text="Home"
-            android:textColor="#07B6DF"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/category_icon"
-            android:gravity="center"
-            android:text="Categories"
-            android:textSize="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/money_icon"
-            android:gravity="center"
-            android:text="Make Money"
-            android:textSize="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/offer_icon"
-            android:gravity="center"
-            android:text="Offers"
-            android:textSize="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/account_icon"
-            android:gravity="center"
-            android:text="Account"
-            android:textSize="15dp" />
-
-
-    </LinearLayout>
 
 
 </RelativeLayout>
