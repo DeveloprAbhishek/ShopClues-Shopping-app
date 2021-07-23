@@ -73,21 +73,21 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:layout_alignTop="@+id/notification_icon"
-                android:layout_toLeftOf="@+id/notification_icon"
+                android:layout_alignTop="@+id/ivNotification_icon"
+                android:layout_toLeftOf="@+id/ivNotification_icon"
                 android:src="@drawable/ic_baseline_search_24" />
 
             <ImageView
-                android:id="@+id/notification_icon"
+                android:id="@+id/ivNotification_icon"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:layout_alignTop="@id/cart_icon"
-                android:layout_toLeftOf="@id/cart_icon"
+                android:layout_alignTop="@id/ivcart_icon"
+                android:layout_toLeftOf="@id/ivcart_icon"
                 android:src="@drawable/ic_baseline_notifications_24" />
 
 
             <ImageView
-                android:id="@+id/cart_icon"
+                android:id="@+id/ivcart_icon"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -544,14 +544,4 @@
 
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
         </RelativeLayout>
