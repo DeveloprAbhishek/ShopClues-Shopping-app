@@ -38,7 +38,7 @@ public class CartLayout extends AppCompatActivity {
         continueToShoppingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CartLayout.this, HomeFragment.class);
+                Intent intent = new Intent(CartLayout.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
