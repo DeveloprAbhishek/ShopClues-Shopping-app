@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/actionbar"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivRegistrationArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/Registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Cart : 1 Item"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="5 Offers Applicable For This Order"
+                   android:layout_marginLeft="20dp"
+                   android:textColor="@color/secondParrot"/>
+               <TextView
+                   android:id="@+id/tvOfferForOrder"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                   android:layout_marginLeft="120dp"/>
+           </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_shade"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivShirtwhishlist"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginVertical="40dp"
+            android:src="@drawable/shirt_wishlist" />
+
+        <TextView
+            android:id="@+id/tvtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="31dp"
+            android:text="Smart Grabb Round Neck Solid Polyster" />
+
+        <TextView
+            android:id="@+id/tvCloseWishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="45dp"
+            android:layout_marginEnd="8dp"
+            android:drawableEnd="@drawable/ic_baseline_close_24" />
+
+        <TextView
+            android:layout_width="202dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="65dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="98dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:text="T-Shirt For Men(Pack Of 3)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="95dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="135dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:text="Size Men's Upper: L"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="115dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="135dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:text="Color: Multicolor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDecreaseWishList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="145dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="135dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:drawableStart="@drawable/ic_baseline_indeterminate_check_box_24"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBuyNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="145dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginEnd="146dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAddWishList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="145dp"
+            android:layout_marginStart="78dp"
+            android:layout_marginEnd="146dp"
+            android:layout_toEndOf="@+id/ivShirtwhishlist"
+            android:drawableStart="@drawable/ic_baseline_add_box_24"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#238D958F"
+        android:layout_marginVertical="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="Total"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="200dp"
+            android:layout_marginVertical="25dp"
+            android:text="Rs 560"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="159dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/background_shade">
+
+        <TextView
+            android:id="@+id/tvTotalOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Total Order Value"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:text="Rs 520"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tvTotalShipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Total Shipping Charges"
+            android:layout_marginVertical="60dp"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginVertical="60dp"
+            android:text="Rs 40"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tvGrandTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Grand Total"
+            android:layout_marginVertical="100dp"
+            android:textStyle="bold"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginVertical="100dp"
+            android:text="Rs 560"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tvInclusiveTaxes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Inclusive of all applicable taxes"
+            android:layout_marginVertical="120dp"
+             />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4AB7E1EA">
+
+        <Button
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style_loginvia_otp"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
+

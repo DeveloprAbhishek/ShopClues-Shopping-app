@@ -150,6 +150,7 @@
                     android:textSize="14sp" />
 
                 <Button
+                    android:id="@+id/btnAccountSignIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -163,6 +164,7 @@
                     android:textColor="@color/cyan" />
 
                 <Button
+                    android:id="@+id/Account_Sign_up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -197,6 +199,7 @@
             android:drawableTop="@drawable/ic_baseline_shopping_bag_24" />
 
         <TextView
+            android:id="@+id/tvAccnt_MyOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -220,6 +223,7 @@
                     android:drawableTop="@drawable/ic_baseline_heart_border_24" />
 
                 <TextView
+                    android:id="@+id/tvWishList_Account"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -247,6 +251,7 @@
                     android:outlineAmbientShadowColor="@color/cyan"/>
 
                 <TextView
+                    android:id="@+id/tvVIPClub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -271,6 +276,7 @@
                     android:drawableTop="@drawable/ic_baseline_notifications_24" />
 
                 <TextView
+                    android:id="@+id/tvGoodBag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -295,6 +301,7 @@
                     android:drawableTop="@drawable/ic_baseline_check_circle_outline_24" />
 
                 <TextView
+                    android:id="@+id/tvClueBuck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -321,6 +328,7 @@
                     android:drawableTop="@drawable/ic_baseline_share_24" />
 
                 <TextView
+                    android:id="@+id/ReferEarn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -346,6 +354,7 @@
                     android:drawableTop="@drawable/ic_baseline_account_circle_24" />
 
                 <TextView
+                    android:id="@+id/Account_MyProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -371,6 +380,7 @@
                     android:drawableTop="@drawable/ic_baseline_account_balance_24" />
 
                 <TextView
+                    android:id="@+id/tvBankDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -396,6 +406,7 @@
                     android:drawableTop="@drawable/ic_baseline_location_on_24" />
 
                 <TextView
+                    android:id="@+id/tvLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -422,6 +433,7 @@
                     android:drawableTop="@drawable/ic_baseline_star_rate_24" />
 
                 <TextView
+                    android:id="@+id/RateYourPurchase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -445,6 +457,7 @@
                         android:drawableTop="@drawable/ic_baseline_help_outline_24" />
 
                     <TextView
+                        android:id="@+id/tvHelp_Account"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -468,6 +481,7 @@
                             android:drawableTop="@drawable/ic_baseline_phone_android_24" />
 
                         <TextView
+                            android:id="@+id/RateTheApp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -494,17 +508,18 @@
 
 
         <TextView
+            android:id="@+id/tvHome_Btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_baseline_home_24"
             android:gravity="center"
             android:text="Home"
-
             android:textSize="10dp"
              />
 
         <TextView
+            android:id="@+id/tvCategories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -514,6 +529,7 @@
             android:textSize="10dp" />
 
         <TextView
+            android:id="@+id/tvMakeMoneyBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -523,6 +539,7 @@
             android:textSize="10dp" />
 
         <TextView
+            android:id="@+id/tvOfferBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -532,6 +549,7 @@
             android:textSize="10dp" />
 
         <TextView
+            android:id="@+id/tvAccountBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

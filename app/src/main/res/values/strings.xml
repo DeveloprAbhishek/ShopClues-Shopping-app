@@ -2,4 +2,5 @@
     <string name="app_name">ShopClues Shopping App</string>
     <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
     <string name="help_support"><![CDATA[Help & Support]]></string>
+    <string name ="rs">\u20B9</string>
 </resources>
