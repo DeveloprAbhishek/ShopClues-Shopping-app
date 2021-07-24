@@ -10,11 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-
 public class ProductDetail extends AppCompatActivity implements View.OnClickListener {
     private ImageView mIvProductImage, mIvCartBtn, favoriteIcon, shareIcon;
-    private TextView mTvProductName, mTvPrice, mTvActualPrice, mTvProductDiscount, mTvBuyBtn, mTvAddCartBtn;
+    private TextView mTvProductName, mTvPrice, mTvActualPrice, mTvProductDiscount, mTvBuyBtn, mTvAddCartBtn, mTvDescription;
     private RatingBar mRbRatingBar;
 
     @Override
@@ -29,6 +27,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     private void initViews() {
         mTvProductName = findViewById(R.id.tvProductTitle);
         mIvProductImage = findViewById(R.id.ivProductImage);
+        mTvDescription = findViewById(R.id.description);
         mTvPrice = findViewById(R.id.tvProductPrice);
         mRbRatingBar = findViewById(R.id.rbOfferRating);
         mIvCartBtn = findViewById(R.id.ivCartBtn);
@@ -42,34 +41,33 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         mIvCartBtn.setOnClickListener(this);
 
 
-//        favoriteIcon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                favoriteIcon.setImageResource(R.drawable.favorite_icon);
-//                Toast.makeText(ProductDetail.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        shareIcon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent shareProduct = new Intent(android.content.Intent.ACTION_SEND);
-//                shareProduct.setType("txt/plain");
-//                startActivity(Intent.createChooser(shareProduct, "Share Product Via"));
-//            }
-//        });
-//
+        favoriteIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                favoriteIcon.setImageResource(R.drawable.favorite_icon);
+                Toast.makeText(ProductDetail.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
+            }
+        });
+        shareIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareProduct = new Intent(android.content.Intent.ACTION_SEND);
+                shareProduct.setType("txt/plain");
+                startActivity(Intent.createChooser(shareProduct, "Share Product Via"));
+            }
+        });
+
 
     }
 
     private void setIntentData() {
-        mTvProductName.setText(getIntent().getStringExtra("title"));
-        Glide.with(mIvProductImage).load(getIntent().getStringExtra("image")).into(mIvProductImage);
-//        productImage.setImageResource(getIntent().getIntExtra("img", 0));
-//        productName.setText(getIntent().getStringExtra("name"));
-//        description.setText(getIntent().getStringExtra("desc"));
-//        price.setText(getIntent().getStringExtra("price"));
-//        actualPrice.setText(getIntent().getStringExtra("actualPrice"));
-//        discount.setText(getIntent().getStringExtra("discount"));
+        mTvProductName.setText(getIntent().getStringExtra("name"));
+        //     Glide.with(mIvProductImage).load(getIntent().getStringExtra("img")).into(mIvProductImage);
+        mIvProductImage.setImageResource(getIntent().getIntExtra("img", 0));
+        mTvDescription.setText(getIntent().getStringExtra("desc"));
+        mTvPrice.setText(getIntent().getStringExtra("price"));
+        mTvActualPrice.setText(getIntent().getStringExtra("actualPrice"));
+        mTvProductDiscount.setText(getIntent().getStringExtra("discount"));
     }
 
     @Override

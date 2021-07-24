@@ -1,57 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Men's Fashion"
-        android:icon="@drawable/ic_menu_send">
+    <item
+        android:icon="@drawable/ic_menu_send"
+        android:title="Men's Fashion">
         <menu>
-            <item android:title="T-Shirt Store"
+            <item
                 android:id="@+id/categoryMensTShirt"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Clothing"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="T-Shirt Store" />
+            <item
                 android:id="@+id/categoryMensClothing"
-                android:icon="@drawable/home_icon"/>
-            <item android:title="Footwear"
+                android:icon="@drawable/home_icon"
+                android:title="Clothing" />
+            <item
                 android:id="@+id/categoryMensFootwear"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Watches"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Footwear" />
+            <item
                 android:id="@+id/categoryMensWatches"
-                android:icon="@drawable/home_icon"/>
+                android:icon="@drawable/home_icon"
+                android:title="Watches" />
         </menu>
     </item>
 
-    <item android:title="@string/women_s_fashion"
-        android:icon="@drawable/ic_menu_send">
+    <item
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/women_s_fashion">
         <menu>
-            <item android:title="Clothing"
+            <item
                 android:id="@+id/categoryWomenClothing"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Jewellery"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Clothing" />
+            <item
                 android:id="@+id/categoryWomenJewellery"
-                android:icon="@drawable/home_icon"/>
-            <item android:title="Footwear"
+                android:icon="@drawable/home_icon"
+                android:title="Jewellery" />
+            <item
                 android:id="@+id/categoryWomenFootwear"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Beauty"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Footwear" />
+            <item
                 android:id="@+id/categoryWomenBeauty"
-                android:icon="@drawable/home_icon"/>
+                android:icon="@drawable/home_icon"
+                android:title="Beauty" />
         </menu>
     </item>
 
-    <item android:title="@string/mobile_accessories"
-        android:icon="@drawable/ic_menu_send">
+    <item
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/mobile_accessories">
         <menu>
-            <item android:title="Smartphones"
+            <item
                 android:id="@+id/categoryMobileSmartphones"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Tablets"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Smartphones" />
+            <item
                 android:id="@+id/categoryMobileTablets"
-                android:icon="@drawable/home_icon"/>
-            <item android:title="@string/headphones_earphones"
+                android:icon="@drawable/home_icon"
+                android:title="Tablets" />
+            <item
                 android:id="@+id/categoryMobileHeadphones"
-                android:icon="@drawable/ic_menu_manage"/>
-            <item android:title="Power Bank"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/headphones_earphones" />
+            <item
                 android:id="@+id/categoryMobilePowerbank"
-                android:icon="@drawable/home_icon"/>
+                android:icon="@drawable/home_icon"
+                android:title="Power Bank" />
         </menu>
     </item>
 </menu>

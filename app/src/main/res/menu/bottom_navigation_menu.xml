@@ -25,5 +25,5 @@
         android:id="@+id/bottomNavAccount"
         android:enabled="true"
         android:icon="@drawable/account_icon"
-        android:title="Categories" />
+        android:title="Account" />
 </menu>

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:id="@+id/profile_welcome"
     android:layout_height="120dp"
     android:background="#36B5C6"
     android:padding="20dp"
@@ -9,29 +10,32 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_centerVertical="true"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:paddingTop="10dp"
+        android:layout_centerVertical="true"
+        android:paddingTop="15dp"
         app:srcCompat="@mipmap/profileimage" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Prabhakar Yadav"
+        android:layout_marginLeft="2dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_toRightOf="@id/imageView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/textView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/imageView"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
         android:layout_below="@id/tvWelcome"
-        android:text="prabhakarkr802@gmail.com" />
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/imageView"
+        android:text="Prabhakar Yadav"
+        android:textColor="#FFFFFF" />
 </RelativeLayout>
