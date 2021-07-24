@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import org.jetbrains.annotations.NotNull;
 
 public class OffersViewHolder extends RecyclerView.ViewHolder {
@@ -36,9 +38,11 @@ public class OffersViewHolder extends RecyclerView.ViewHolder {
     }
 
     void setOffersData(OffersModel model) {
-        mTvOfferTitle.setText(model.getOfferTitle());
-        mIvOfferImage.setImageResource(model.getImageUrl());
-
+        mTvOfferTitle.setText(model.getTitle());
+        Glide.with(mIvOfferImage.getContext()).load(model.getImage()).into(mIvOfferImage);
+        mTvOfferPrice.setText("Rs."+model.getPrice());
+        mTvOfferOff.setText(model.getOffer()+"% off");
+        mRbOfferRating.setRating((float) model.getRating());
         mCvOfferCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

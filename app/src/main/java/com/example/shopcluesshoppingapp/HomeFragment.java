@@ -91,7 +91,6 @@ public class HomeFragment extends Fragment implements ProductClickListener{
     private void initViews(View view) {
         recyclerView = view.findViewById(R.id.recyclerView);
         productName = view.findViewById(R.id.product_name);
-        description = view.findViewById(R.id.product_desc);
         price = view.findViewById(R.id.price);
         actualPrice = view.findViewById(R.id.actual_price);
         discount = view.findViewById(R.id.discount);
