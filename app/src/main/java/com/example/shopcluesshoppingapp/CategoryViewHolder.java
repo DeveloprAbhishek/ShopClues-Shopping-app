@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder {
     private ImageView mSubCategoryImage1, mSubCategoryImage2, mSubCategoryImage3, mSubCategoryImage4, mSubCategoryImage5, mSubCategoryImage6;

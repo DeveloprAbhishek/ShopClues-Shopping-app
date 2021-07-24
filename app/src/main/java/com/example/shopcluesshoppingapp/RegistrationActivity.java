@@ -1,8 +1,5 @@
 package com.example.shopcluesshoppingapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,14 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener{
-    private ImageView mIvRegistrationArrowBack, mIvRegistration_Fb_logo;
+public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
+    private ImageView mIvRegistrationArrowBack;
+    private TextView mIvRegistration_Fb_logo;
     private CheckBox mCbRegisterWithPassword;
     private EditText mEtEnterYourEmailId_Registration, mEtMobileNumber, mEtPassword;
     private TextView mTvLoginNow;
@@ -28,6 +29,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private String EMAIL_REGEX = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
     private void initViews() {
         mIvRegistrationArrowBack = findViewById(R.id.ivRegistrationArrowBack);
-        mIvRegistration_Fb_logo = findViewById(R.id.ivRegistration_Fb_logo);
+        mIvRegistration_Fb_logo = findViewById(R.id.faceBook_option_registration);
         mCbRegisterWithPassword = findViewById(R.id.cbRegisterWithPassword);
         mEtEnterYourEmailId_Registration = findViewById(R.id.etEnterYourEmailId_Registration);
         mEtMobileNumber = findViewById(R.id.etMobileNumber);
@@ -55,33 +57,33 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        if(R.id.ivRegistrationArrowBack == v.getId()) {
+        if (R.id.ivRegistrationArrowBack == v.getId()) {
             onBackPressed();
-        } else if(R.id.etEnterYourEmailId_Registration == v.getId()) {
+        } else if (R.id.etEnterYourEmailId_Registration == v.getId()) {
             mEtMobileNumber.setVisibility(View.VISIBLE);
             mCbRegisterWithPassword.setVisibility(View.VISIBLE);
-        } else if(R.id.cbRegisterWithPassword == v.getId()) {
-            if(mCbRegisterWithPassword.isChecked()) mEtPassword.setVisibility(View.VISIBLE);
+        } else if (R.id.cbRegisterWithPassword == v.getId()) {
+            if (mCbRegisterWithPassword.isChecked()) mEtPassword.setVisibility(View.VISIBLE);
             else mEtPassword.setVisibility(View.GONE);
-        } else if(v.getId() == R.id.btnRegister) {
-                boolean emailValid = isEmailValid();
-                boolean mobileValid = isMobileNumberValid();
-                boolean passwordValid = isPasswordValid();
-                if(mCbRegisterWithPassword.isChecked() && emailValid &&  mobileValid && passwordValid) {
-                    RegisterNewUser();
-                } else if(!mCbRegisterWithPassword.isChecked() && emailValid && mobileValid){
+        } else if (v.getId() == R.id.btnRegister) {
+            boolean emailValid = isEmailValid();
+            boolean mobileValid = isMobileNumberValid();
+            boolean passwordValid = isPasswordValid();
+            if (mCbRegisterWithPassword.isChecked() && emailValid && mobileValid && passwordValid) {
+                RegisterNewUser();
+            } else if (!mCbRegisterWithPassword.isChecked() && emailValid && mobileValid) {
 
-                }
-        } else if(v.getId() == R.id.tvLoginNow) {
+            }
+        } else if (v.getId() == R.id.tvLoginNow) {
             startActivity(new Intent(RegistrationActivity.this, LogInActivity.class));
-        } else if(v.getId() == R.id.ivRegistration_Fb_logo) {
+        } else if (v.getId() == R.id.faceBook_option_registration) {
 
         }
     }
 
     private void RegisterNewUser() {
         String email = mEtEnterYourEmailId_Registration.getText().toString();
-        String password  = mEtPassword.getText().toString();
+        String password = mEtPassword.getText().toString();
         String mobile = mEtMobileNumber.getText().toString();
         mAuth = FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -95,7 +97,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()) {
+                                    if (task.isSuccessful()) {
                                         Toast.makeText(RegistrationActivity.this, "You have successfully registered.", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
                                     } else {
@@ -111,7 +113,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     }
 
     private boolean isEmailValid() {
-        if(mEtEnterYourEmailId_Registration.getText().toString().matches(EMAIL_REGEX)) {
+        if (mEtEnterYourEmailId_Registration.getText().toString().matches(EMAIL_REGEX)) {
             return true;
         } else {
             mEtEnterYourEmailId_Registration.setError("Invalid email!");
@@ -121,7 +123,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     }
 
     private boolean isMobileNumberValid() {
-        if(mEtMobileNumber.getText().toString().length() == 10) {
+        if (mEtMobileNumber.getText().toString().length() == 10) {
             return true;
         } else {
             mEtMobileNumber.setError("Invalid Mobile Number!");
@@ -131,7 +133,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     }
 
     private boolean isPasswordValid() {
-        if(mEtPassword.getText().toString().length() >= 6) {
+        if (mEtPassword.getText().toString().length() >= 6) {
             return true;
         } else {
             mEtPassword.setError("Please enter atleast 6 digit password;");

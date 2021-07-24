@@ -1,8 +1,5 @@
 package com.example.shopcluesshoppingapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,9 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.FirebaseDatabase;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
@@ -65,7 +62,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             }
 
             @Override
-            public void onCodeSent(@NotNull String verificationId,
+            public void onCodeSent(String verificationId,
                                    @NonNull PhoneAuthProvider.ForceResendingToken token) {
                 super.onCodeSent(verificationId, token);
                 Log.d(TAG, "onCodeSent:" + verificationId);
@@ -99,32 +96,32 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(R.id.tvRegisterNow == v.getId()) {
+        if (R.id.tvRegisterNow == v.getId()) {
             startActivity(new Intent(LogInActivity.this, RegistrationActivity.class));
-        } else if(R.id.btnLoginViaOTP == v.getId()) {
+        } else if (R.id.btnLoginViaOTP == v.getId()) {
 //            if(isMobileNumberValid()) {
 //                String phoneNumber = mEtEnterEmail.getText().toString();
 //                //startPhoneNumberVerification(phoneNumber);
 //            }
-        } else if(R.id.btnLoginViaPassword == v.getId()) {
-                mBtnLoginViaPassword.setVisibility(View.GONE);
-                mBtnLoginViaOTP.setVisibility(View.GONE);
-                mEtEnterPassword.setVisibility(View.VISIBLE);
-                mBtnLogin.setVisibility(View.VISIBLE);
+        } else if (R.id.btnLoginViaPassword == v.getId()) {
+            mBtnLoginViaPassword.setVisibility(View.GONE);
+            mBtnLoginViaOTP.setVisibility(View.GONE);
+            mEtEnterPassword.setVisibility(View.VISIBLE);
+            mBtnLogin.setVisibility(View.VISIBLE);
 
-        } else if(R.id.btnLogin == v.getId()) {
-                login();
+        } else if (R.id.btnLogin == v.getId()) {
+            login();
         }
     }
 
     private void login() {
         String email = mEtEnterEmail.getText().toString();
-        String password  = mEtEnterPassword.getText().toString();
+        String password = mEtEnterPassword.getText().toString();
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
                     startActivity(new Intent(LogInActivity.this, HomeActivity.class));
                     Toast.makeText(LogInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 } else {

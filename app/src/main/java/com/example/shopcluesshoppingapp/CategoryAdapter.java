@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull  CategoryViewHolder holder, int position) {
         CategoryModel model = categoryModelsList.get(position);
         holder.setData(model);
     }

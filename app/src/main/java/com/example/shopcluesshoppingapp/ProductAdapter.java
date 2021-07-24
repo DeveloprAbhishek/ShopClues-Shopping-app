@@ -9,57 +9,36 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<LayoutBaseModel> layoutBaseModelsList;
+public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
+    private ArrayList<ProductModel> productModelsList;
     private ProductClickListener productClickListener;
 
-    public ProductAdapter(ArrayList<LayoutBaseModel> layoutBaseModelsList, ProductClickListener productClickListener) {
-        this.layoutBaseModelsList = layoutBaseModelsList;
+    public ProductAdapter(ArrayList<ProductModel> productModelsList, ProductClickListener productClickListener) {
+        this.productModelsList = productModelsList;
         this.productClickListener = productClickListener;
     }
 
     @NonNull
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case 0:
-                View smallBannerView = LayoutInflater.from(parent.getContext()).inflate(R.layout.small_banner_layout, parent, false);
-                return new SmallBannerViewHolder(smallBannerView,productClickListener);
-            case 1:
-                View productView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout, parent, false);
-                return new ProductViewHolder(productView,productClickListener);
-        }
-        return null;
+    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View productView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout, parent, false);
+        return new ProductViewHolder(productView, productClickListener);
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        int viewType = layoutBaseModelsList.get(position).getViewType();
-        switch (viewType) {
-            case 0:
-                if (holder instanceof SmallBannerViewHolder) {
-                    SmallBannerModel smallBanner = (SmallBannerModel) layoutBaseModelsList.get(position);
-                    ((SmallBannerViewHolder) holder).setSmallBannerData(smallBanner);
-                }
-                break;
-            case 1:
-                if (holder instanceof ProductViewHolder) {
-                    ProductModel productModel = (ProductModel) layoutBaseModelsList.get(position);
-                    ((ProductViewHolder) holder).setProductData(productModel);
-                }
-                break;
-        }
+    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+        ProductModel model = productModelsList.get(position);
+        holder.setProductData(model);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return layoutBaseModelsList.size();
+        return productModelsList.size();
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        return layoutBaseModelsList.get(position).getViewType();
-    }
 }
