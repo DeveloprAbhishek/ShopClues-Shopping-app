@@ -11,6 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -32,6 +37,8 @@ public class OffersFragment extends Fragment implements OffersClickListener{
 
     private RecyclerView recyclerView;
     private ArrayList<OffersModel> modelList;
+    private OffersAdapter offersAdapter;
+    private ProgressBar progressBar;
 
     public OffersFragment() {
         // Required empty public constructor
@@ -70,60 +77,90 @@ public class OffersFragment extends Fragment implements OffersClickListener{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_offers, container, false);
         initViews(view);
-        buildList();
-        setRecyclerView();
+        getDataFromFirebase();
+        //buildList();
+        //setRecyclerView();
 
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        offersAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        offersAdapter.stopListening();
+    }
+
     private void initViews(View view) {
         recyclerView = view.findViewById(R.id.recyclerView);
+        progressBar = view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
     }
 
-
-    private void buildList() {
-
-        modelList = new ArrayList<>();
-
-        modelList.add(new OffersModel(R.drawable.product1, "Pause solid blue Causal Shirt", 78, 1099, 5));
-        modelList.add(new OffersModel(R.drawable.product2, "Craftwell Blue Double Bedsheet", 45, 452, 4));
-        modelList.add(new OffersModel(R.drawable.product3, "Bihari JI Pure Ghe 1Ltr.", 62, 784, 2.2));
-        modelList.add(new OffersModel(R.drawable.product4, "Lycra V-Neck Men's T-Shirt", 87, 125, 5));
-        modelList.add(new OffersModel(R.drawable.product5, "leather Brown Men's Wallet", 89, 1245, 3));
-        modelList.add(new OffersModel(R.drawable.product6, "Liddu TG 113 Speaker", 45, 345, 5));
-        modelList.add(new OffersModel(R.drawable.product7, "Palco M1101 USB Bluetooth", 23, 451, 2));
-        modelList.add(new OffersModel(R.drawable.product8, "Trendyz Men Black Hooded Tshirt", 56, 899, 4));
-        modelList.add(new OffersModel(R.drawable.product9, "Men Red Solid High Neck T-Shirt", 12, 1099, 3));
-        modelList.add(new OffersModel(R.drawable.product11, "Krishna Multicolor Wall Stickers", 14, 599, 2));
-        modelList.add(new OffersModel(R.drawable.product12, "Clymb Men Sport Shoe", 45, 23, 4));
-        modelList.add(new OffersModel(R.drawable.product13, "Voorkoms body Tempoary Tattoo", 23, 4526, 7));
-        modelList.add(new OffersModel(R.drawable.product1, "Pause solid blue Causal Shirt", 78, 1099, 5));
-        modelList.add(new OffersModel(R.drawable.product2, "Craftwell Blue Double Bedsheet", 45, 789, 4));
-        modelList.add(new OffersModel(R.drawable.product3, "Bihari JI Pure Ghe 1Ltr.", 62, 784, 2.2));
-        modelList.add(new OffersModel(R.drawable.product4, "Lycra V-Neck Men's T-Shirt", 87, 125, 5));
-        modelList.add(new OffersModel(R.drawable.product5, "leather Brown Men's Wallet", 89, 1245, 3));
-        modelList.add(new OffersModel(R.drawable.product6, "Liddu TG 113 Speaker", 45, 345, 5));
-        modelList.add(new OffersModel(R.drawable.product7, "Palco M1101 USB Bluetooth", 23, 451, 2));
-        modelList.add(new OffersModel(R.drawable.product8, "Trendyz Men Black Hooded Tshirt", 56, 899, 4));
-        modelList.add(new OffersModel(R.drawable.product9, "Men Red Solid High Neck T-Shirt", 12, 1099, 3));
-        modelList.add(new OffersModel(R.drawable.product11, "Krishna Multicolor Wall Stickers", 14, 599, 2));
-        modelList.add(new OffersModel(R.drawable.product12, "Clymb Men Sport Shoe", 45, 23, 4));
-        modelList.add(new OffersModel(R.drawable.product13, "Voorkoms body Tempoary Tattoo", 23, 4526, 7));
-
-    }
-
-
-    private void setRecyclerView() {
-        OffersAdapter offersAdapter = new OffersAdapter(modelList, this);
+    void getDataFromFirebase() {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("offers");
+
+        FirebaseRecyclerOptions<OffersModel> options =
+                new FirebaseRecyclerOptions.Builder<OffersModel>()
+                        .setQuery(myRef, OffersModel.class)
+                        .build();
+        offersAdapter = new OffersAdapter(options, this, progressBar);
         recyclerView.setAdapter(offersAdapter);
+        //progressBar.setVisibility(View.GONE);
+
     }
+
+//    private void buildList() {
+//
+//        modelList = new ArrayList<>();
+//
+//        modelList.add(new OffersModel(R.drawable.product1, "Pause solid blue Causal Shirt", 78, 1099, 5));
+//        modelList.add(new OffersModel(R.drawable.product2, "Craftwell Blue Double Bedsheet", 45, 452, 4));
+//        modelList.add(new OffersModel(R.drawable.product3, "Bihari JI Pure Ghe 1Ltr.", 62, 784, 2.2));
+//        modelList.add(new OffersModel(R.drawable.product4, "Lycra V-Neck Men's T-Shirt", 87, 125, 5));
+//        modelList.add(new OffersModel(R.drawable.product5, "leather Brown Men's Wallet", 89, 1245, 3));
+//        modelList.add(new OffersModel(R.drawable.product6, "Liddu TG 113 Speaker", 45, 345, 5));
+//        modelList.add(new OffersModel(R.drawable.product7, "Palco M1101 USB Bluetooth", 23, 451, 2));
+//        modelList.add(new OffersModel(R.drawable.product8, "Trendyz Men Black Hooded Tshirt", 56, 899, 4));
+//        modelList.add(new OffersModel(R.drawable.product9, "Men Red Solid High Neck T-Shirt", 12, 1099, 3));
+//        modelList.add(new OffersModel(R.drawable.product11, "Krishna Multicolor Wall Stickers", 14, 599, 2));
+//        modelList.add(new OffersModel(R.drawable.product12, "Clymb Men Sport Shoe", 45, 23, 4));
+//        modelList.add(new OffersModel(R.drawable.product13, "Voorkoms body Tempoary Tattoo", 23, 4526, 7));
+//        modelList.add(new OffersModel(R.drawable.product1, "Pause solid blue Causal Shirt", 78, 1099, 5));
+//        modelList.add(new OffersModel(R.drawable.product2, "Craftwell Blue Double Bedsheet", 45, 789, 4));
+//        modelList.add(new OffersModel(R.drawable.product3, "Bihari JI Pure Ghe 1Ltr.", 62, 784, 2.2));
+//        modelList.add(new OffersModel(R.drawable.product4, "Lycra V-Neck Men's T-Shirt", 87, 125, 5));
+//        modelList.add(new OffersModel(R.drawable.product5, "leather Brown Men's Wallet", 89, 1245, 3));
+//        modelList.add(new OffersModel(R.drawable.product6, "Liddu TG 113 Speaker", 45, 345, 5));
+//        modelList.add(new OffersModel(R.drawable.product7, "Palco M1101 USB Bluetooth", 23, 451, 2));
+//        modelList.add(new OffersModel(R.drawable.product8, "Trendyz Men Black Hooded Tshirt", 56, 899, 4));
+//        modelList.add(new OffersModel(R.drawable.product9, "Men Red Solid High Neck T-Shirt", 12, 1099, 3));
+//        modelList.add(new OffersModel(R.drawable.product11, "Krishna Multicolor Wall Stickers", 14, 599, 2));
+//        modelList.add(new OffersModel(R.drawable.product12, "Clymb Men Sport Shoe", 45, 23, 4));
+//        modelList.add(new OffersModel(R.drawable.product13, "Voorkoms body Tempoary Tattoo", 23, 4526, 7));
+//
+//    }
+
+
+//    private void setRecyclerView() {
+//        OffersAdapter offersAdapter = new OffersAdapter(modelList, this);
+//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+//        recyclerView.setAdapter(offersAdapter);
+//    }
 
     @Override
     public void onOfferClick(OffersModel model) {
         Intent goToOfferDetailPage = new Intent(getContext(), ProductDetail.class);
-        goToOfferDetailPage.putExtra("title", model.getOfferTitle().toString());
-        goToOfferDetailPage.putExtra("image", model.getImageUrl());
+        goToOfferDetailPage.putExtra("title", model.getTitle().toString());
+        goToOfferDetailPage.putExtra("image", model.getImage());
         startActivity(goToOfferDetailPage);
     }
 }

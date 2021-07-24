@@ -31,7 +31,6 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         product_price = itemView.findViewById(R.id.price);
         product_actualPrice = itemView.findViewById(R.id.actual_price);
         product_discount = itemView.findViewById(R.id.discount);
-        description = itemView.findViewById(R.id.product_desc);
         productView = itemView.findViewById(R.id.product_card);
 
     }
