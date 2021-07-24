@@ -11,10 +11,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white" >
+        android:background="@color/white">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
@@ -45,8 +47,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -256,6 +258,8 @@
             </LinearLayout>
 
 
+
+
         </RelativeLayout>
     </ScrollView>
 
@@ -268,27 +272,27 @@
         android:weightSum="2">
 
         <TextView
-            android:id="@+id/ButtonBuy"
+            android:id="@+id/ButtonAddToCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buy_btn_bg_2"
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
-            android:text="Buy Now"
+            android:text="Add to Cart"
             android:textColor="#000000"
             android:textSize="25dp" />
 
 
         <TextView
-            android:id="@+id/ButtonAddToCart"
+            android:id="@+id/ButtonBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/cart_btn_bg_2"
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
-            android:text="Add to Cart"
+            android:text="Buy Now"
             android:textColor="#FFFFFF"
             android:textSize="25dp" />
     </LinearLayout>
