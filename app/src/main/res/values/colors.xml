@@ -11,4 +11,10 @@
     <color name="gradientOrange">#ff8c00</color>
     <color name ="darkOrange">#E85D04</color>
     <color name ="endOrange">#DC2F02</color>
+    <color name ="Parrot">#FCAFB5AD</color>
+    <color name ="secondParrot">#00ff00</color>
+    <color name ="PencilShade">#FF8D958F</color>
+    <color name ="skyBlueShade">#4AB7E1EA</color>
+    <color name ="LightPencilShade">#238D958F</color>
+
 </resources>
