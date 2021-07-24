@@ -3,6 +3,13 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -55,4 +62,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.razorpay:checkout:1.6.6'
 }
