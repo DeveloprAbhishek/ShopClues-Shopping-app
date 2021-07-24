@@ -2,6 +2,7 @@ package com.example.shopcluesshoppingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -110,14 +111,22 @@ public class CartLayout extends AppCompatActivity implements CartItemClickListen
 
     @Override
     public void onClickCloseIcon(int position) {
-        Toast.makeText(this, ""+FirebaseDatabase.getInstance().getReference().child("cart").getRef().getKey(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+FirebaseDatabase.getInstance().getReference().child("cart").getRef().getKey(), Toast.LENGTH_SHORT).show();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("cart");
+        FirebaseRecyclerOptions<CartModel> options =
+                new FirebaseRecyclerOptions.Builder<CartModel>()
+                        .setQuery(myRef, CartModel.class)
+                        .build();
 
+        Toast.makeText(this, "z"+options, Toast.LENGTH_SHORT).show();
         FirebaseDatabase.getInstance().getReference().child("cart").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                Toast.makeText(CartLayout.this, "c"+snapshot.getChildrenCount(), Toast.LENGTH_SHORT).show();
-
-
+                for (DataSnapshot ds: snapshot.getChildren()){
+                    String key = ds.getKey();
+                    //Toast.makeText(CartLayout.this, ""+position, Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
