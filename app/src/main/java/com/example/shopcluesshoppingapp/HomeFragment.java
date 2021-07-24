@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -32,8 +33,7 @@ public class HomeFragment extends Fragment implements ProductClickListener {
     private String mParam2;
 
     private RecyclerView recyclerView;
-    private ArrayList<LayoutBaseModel> layouts;
-    private ArrayList<ProductModel> productModels;
+    private ArrayList<ProductModel> layouts;
     private ImageView productImage;
     private TextView productName;
     private TextView description;
@@ -171,17 +171,12 @@ public class HomeFragment extends Fragment implements ProductClickListener {
 
     private void setRecyclerView() {
         ProductAdapter productAdapter = new ProductAdapter(layouts, this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(productAdapter);
     }
 
     @Override
-    public void onProductClick(LayoutBaseModel layoutBaseModel, int position) {
-        Intent intent = new Intent(getContext(), ProductDetail.class);
-
-
+    public void onProductClick(ProductModel productModel, int position) {
 //        addToCartButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -190,12 +185,13 @@ public class HomeFragment extends Fragment implements ProductClickListener {
 //                startActivity(goToCart);
 //            }
 //        });
-//        intent.putExtra("img", productModels.get(position).getImage());
-//        intent.putExtra("name", productModels.get(position).getName());
-//        intent.putExtra("desc", productModels.get(position).getDescription());
-//        intent.putExtra("price", productModels.get(position).getPrice());
-//        intent.putExtra("actualPrice", productModels.get(position).getActualPrice());
-//        intent.putExtra("discount", productModels.get(position).getDiscount());
-        startActivity(intent);
+        Intent gotoProductDetails = new Intent(getContext(), ProductDetail.class);
+        gotoProductDetails.putExtra("img", layouts.get(position).getImage());
+        gotoProductDetails.putExtra("name", layouts.get(position).getName());
+        gotoProductDetails.putExtra("desc", layouts.get(position).getDescription());
+        gotoProductDetails.putExtra("price", layouts.get(position).getPrice());
+        gotoProductDetails.putExtra("actualPrice", layouts.get(position).getActualPrice());
+        gotoProductDetails.putExtra("discount", layouts.get(position).getDiscount());
+        startActivity(gotoProductDetails);
     }
 }
