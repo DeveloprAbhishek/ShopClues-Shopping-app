@@ -64,7 +64,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_navigation_menu" />
+            android:background="@color/white"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemBackground="@color/white"
+            app:itemIconTint="@color/cyan"
+            app:itemTextColor="@color/cyan"
+            android:theme="@style/ThemeOverlay.AppCompat"/>
     </RelativeLayout>
 
 
