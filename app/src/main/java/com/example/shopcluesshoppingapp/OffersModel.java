@@ -1,20 +1,21 @@
 package com.example.shopcluesshoppingapp;
 
 public class OffersModel {
-    String image, title;
+    String image, title, key;
     int price, maxPrice, offer;
     double rating;
 
     public OffersModel() {
     }
 
-    public OffersModel(String image, String title, int price, int maxPrice, int offer, double rating) {
+    public OffersModel(String image, String title, int price, int maxPrice, int offer, double rating, String key) {
         this.image = image;
         this.title = title;
         this.price = price;
         this.maxPrice = maxPrice;
         this.offer = offer;
         this.rating = rating;
+        this.key = key;
     }
 
     public String getImage() {
@@ -39,5 +40,9 @@ public class OffersModel {
 
     public double getRating() {
         return rating;
+    }
+
+    public String getKey() {
+        return key;
     }
 }

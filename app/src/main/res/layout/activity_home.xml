@@ -34,13 +34,13 @@
 
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:layout_alignTop="@id/cart_icon"
-                    android:layout_toLeftOf="@id/cart_icon"
+                    android:layout_alignTop="@id/ivCartIcon"
+                    android:layout_toLeftOf="@id/ivCartIcon"
                     android:src="@drawable/notification_icon" />
 
 
                 <ImageView
-                    android:id="@+id/cart_icon"
+                    android:id="@+id/ivCartIcon"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:layout_alignParentRight="true"

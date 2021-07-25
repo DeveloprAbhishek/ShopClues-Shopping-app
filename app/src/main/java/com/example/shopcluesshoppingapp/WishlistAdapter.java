@@ -4,24 +4,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-
-public class CartAdapter extends  FirebaseRecyclerAdapter<CartModel, CartViewHolder>{
-
-
-
-    private CartItemClickListener cartItemClickListener;
+public class WishlistAdapter extends FirebaseRecyclerAdapter<OffersModel, WishlistViewHolder> {
+    private onWishlistClickListener onWishlistClickListener;
     private ProgressBar progressBar;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -29,23 +22,23 @@ public class CartAdapter extends  FirebaseRecyclerAdapter<CartModel, CartViewHol
      *
      * @param options
      */
-    public CartAdapter(@NotNull FirebaseRecyclerOptions<CartModel> options, CartItemClickListener cartClicked, ProgressBar progressBar) {
+    public WishlistAdapter(@NonNull FirebaseRecyclerOptions<OffersModel> options, onWishlistClickListener onWishlistClickListener, ProgressBar progressBar) {
         super(options);
-        this.cartItemClickListener = cartClicked;
+        this.onWishlistClickListener = onWishlistClickListener;
         this.progressBar = progressBar;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NotNull CartModel model) {
+    protected void onBindViewHolder(@NonNull WishlistViewHolder holder, int position, @NonNull OffersModel model) {
         String key = getRef(position).getKey();
-        holder.setData(model, position, key);
+        holder.setOffersData(model, key, position);
         progressBar.setVisibility(View.GONE);
     }
 
     @NonNull
     @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item_layout, parent, false);
-        return new CartViewHolder(view, cartItemClickListener);
+    public WishlistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item_layout, parent, false);
+        return new WishlistViewHolder(view, onWishlistClickListener);
     }
 }

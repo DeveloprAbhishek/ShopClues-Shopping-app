@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -16,8 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -33,10 +40,10 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     private RatingBar mRbRatingBar;
     private TextView mTvShopMore, mTvGoToCart;
 
-    private String productTitle,  productImage;
+    private String productTitle,  productImage, productKey;
     private int productPrice, productOffer;
     private float productRating;
-
+    private boolean isHeartSelected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +86,13 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         productPrice = getIntent().getIntExtra("price", -1);
         productOffer = getIntent().getIntExtra("offer", 1);
         productRating = (float) getIntent().getDoubleExtra("rating", -1);
+        productKey = getIntent().getStringExtra("key");
+        boolean isWishlistData = getIntent().getBooleanExtra("isWishlist", false);
+        if (isWishlistData) {
+            isHeartSelected = true;
+            favoriteIcon.setImageResource(R.drawable.favorite_icon);
+        }
+
     }
 
     private void setIntentData() {
@@ -97,15 +111,13 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
             startPayment();
         } else if (v.getId() == R.id.ivCartBtn) {
             Intent intent = new Intent(ProductDetail.this, CartLayout.class);
-            Toast.makeText(ProductDetail.this, "Item Added to the Cart", Toast.LENGTH_LONG).show();
             startActivity(intent);
         } else if (v.getId() == R.id.share_icon) {
             Intent shareProduct = new Intent(android.content.Intent.ACTION_SEND);
             shareProduct.setType("txt/plain");
             startActivity(Intent.createChooser(shareProduct, "Share Product Via"));
         } else if(v.getId() == R.id.favorite_icon) {
-            favoriteIcon.setImageResource(R.drawable.favorite_icon);
-            Toast.makeText(ProductDetail.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
+            wishlistCreate();
         } else if(v.getId() == R.id.tvShopMore) {
             startActivity(new Intent(ProductDetail.this, HomeFragment.class));
         } else if(v.getId() == R.id.tvGoToCart) {
@@ -113,10 +125,21 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    private void wishlistCreate() {
+        if (isHeartSelected) {
+            removeProductFromWishlist();
+            favoriteIcon.setImageResource(R.drawable.favorite_blank_icon);
+            Toast.makeText(ProductDetail.this, "Removed from Wishlist", Toast.LENGTH_SHORT).show();
+            isHeartSelected = false;
+        } else {
+            addProductToWishlist();
+            favoriteIcon.setImageResource(R.drawable.favorite_icon);
+            isHeartSelected = true;
+        }
+    }
+
     private void addProductToCart() {
-
         CartModel object = new CartModel(productTitle, productImage, productPrice);
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         database.getReference().child("cart").push()
                 .setValue(object)
@@ -124,6 +147,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(ProductDetail.this, "Added to cart", Toast.LENGTH_SHORT).show();
+                        setUserCartGrandTotal();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -136,6 +160,32 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         mTvAddCartBtn.setVisibility(View.GONE);
         mTvShopMore.setVisibility(View.VISIBLE);
         mTvGoToCart.setVisibility(View.VISIBLE);
+    }
+
+    private void addProductToWishlist() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference().child("wishlist");
+        String key = ref.push().getKey();
+        OffersModel object = new OffersModel(productImage, productTitle, productPrice, -1 , productOffer, productRating, key);
+        ref.child(key).setValue(object);
+
+
+    }
+
+    void removeProductFromWishlist() {
+        FirebaseDatabase.getInstance().getReference().child("wishlist").child(productKey).removeValue();
+    }
+
+    void setUserCartGrandTotal() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("cartTotalAmount");
+
+        ref.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                int cartGTotalPrice = dataSnapshot.getValue(int.class);
+                ref.setValue(cartGTotalPrice + productPrice);
+            }
+        });
     }
 
     private void startPayment() {

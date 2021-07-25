@@ -1,210 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CartLayout">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/arrow_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/ivBackButton"
+                android:text="Cart"
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        />
-    <View
-        android:id="@+id/topView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#FFFFFF" />
-
-    <View
-
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:layout_below="@id/topView"
-        android:background="#C2C2C2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/cart_arrow"
-        android:text="Cart"
-        android:textColor="#000"
-        android:textSize="25dp" />
-
-    <ImageView
-        android:id="@+id/cart_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/topView"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/arrow_icon" />
-
+        android:layout_centerInParent="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topView"
-        android:layout_above="@id/cart_card"/>
-        <RelativeLayout
+        android:layout_above="@id/orderFinalDetails"
+        android:layout_below="@id/toolbar" />
 
-            android:layout_width="match_parent"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderFinalDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvPlaceOrderButton"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:background="#C4C4C4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTotalOrderValueLabel"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/cart_continue_shopping"
-            android:id="@+id/cart_card">
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Total Order Value :"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#C4C4C4" />
+        <TextView
+            android:id="@+id/tvTotalOrderValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:drawableLeft="@drawable/rupees_icon"
+            android:text="1099"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvTotalDiscountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Total Discount :"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalOrderValueLabel" />
 
+        <TextView
+            android:id="@+id/tvTotalDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:drawableLeft="@drawable/rupees_icon"
+            android:text="500"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalOrderValue"/>
 
+        <TextView
+            android:id="@+id/tvShippingChargesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Total Shipping Charge :"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalDiscountLabel" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#C4C4C4" />
+        <TextView
+            android:id="@+id/tvShippingCharges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:text="Free"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalDiscount"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="10dp">
+        <TextView
+            android:id="@+id/tvGrandTotalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Grand Total :"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvShippingChargesLabel" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Total Order Value :"
-                        android:textSize="15dp" />
+        <TextView
+            android:id="@+id/tvGrandTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:text="599"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/rupees_icon_2"
+            app:layout_constraintTop_toBottomOf="@id/tvShippingCharges"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <TextView
-                        android:id="@+id/total_value_cart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="200dp"
-                        android:drawableLeft="@drawable/rupees_icon"
-                        android:text="1099"
-                        android:textColor="#000000"
-                        android:textSize="15dp" />
+        <TextView
+            android:id="@+id/tvInclusiveLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="Inclusive of all the applicable taxes"
+            android:textColor="#000000"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGrandTotal" />
 
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Total Discount :"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/total_discount_cart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="220dp"
-                        android:drawableLeft="@drawable/rupees_icon"
-                        android:text="500"
-                        android:textColor="#000000"
-                        android:textSize="15dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Total Shipping Charge :"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/shipping_charge_cart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="200dp"
-                        android:text="Free"
-                        android:textColor="#000000"
-                        android:textSize="15dp" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Grand Total :"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/grand_total_cart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="200dp"
-                        android:drawableLeft="@drawable/rupees_icon_2"
-                        android:text="599"
-                        android:textColor="#FF5203"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Inclusive of all the applicable taxes"
-                    android:textColor="#000000"
-                    android:textSize="10dp" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#C4C4C4" />
-            </LinearLayout>
-        </RelativeLayout>
+
+
+
+
+
     <TextView
-        android:id="@+id/cart_continue_shopping"
+        android:id="@+id/tvPlaceOrderButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/cart_btn_bg_2"
         android:gravity="center_horizontal"
-        android:padding="15dp"
+        android:padding="10dp"
         android:text="Place Order"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
