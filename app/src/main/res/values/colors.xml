@@ -16,5 +16,8 @@
     <color name ="PencilShade">#FF8D958F</color>
     <color name ="skyBlueShade">#4AB7E1EA</color>
     <color name ="LightPencilShade">#238D958F</color>
+    <color name="Transparent">#00000000</color>
+    <color name="lightGreyLine">#B9CFCF</color>
+
 
 </resources>
