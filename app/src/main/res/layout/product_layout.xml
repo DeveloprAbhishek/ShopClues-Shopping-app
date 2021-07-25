@@ -85,24 +85,24 @@
             android:gravity="center"
             android:paddingHorizontal="10dp"
             android:paddingVertical="10dp"
-            android:text="Buy Now"
-            android:textColor="#F4F2F2"
-            android:textSize="15dp" />
+            android:text="Add to Cart"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/cart_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="14dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/buy_btn"
             android:background="@drawable/cart_btn_bg"
             android:gravity="center"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
-            android:text="Add to Cart"
-            android:textColor="#3E3636"
-            android:textSize="15dp" />
+            android:text="Buy Now"
+            android:textColor="#000000"
+            android:textSize="12dp" />
 
     </RelativeLayout>
 

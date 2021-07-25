@@ -7,12 +7,13 @@
     tools:context=".RegistrationActivity">
 
     <LinearLayout
-        android:id="@+id/topbar"
+        android:id="@+id/registrationTopBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/actionbar"
         android:orientation="horizontal"
         android:padding="16dp">
+
 
         <ImageView
             android:id="@+id/ivRegistrationArrowBack"
@@ -36,7 +37,7 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/topbar">
+        android:layout_below="@id/registrationTopBar">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -143,12 +144,13 @@
             android:id="@+id/tvLoginNow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/tvAlreadyHaveAccount"
+            android:layout_toRightOf="@id/tvAlreadyHaveAccount"
             android:text="Login Now"
-            android:textColor="@color/cyan" />
+            android:textColor="@color/cyan"
+            android:textStyle="bold" />
     </LinearLayout>
-
-
-
 
 
     <TextView
@@ -161,20 +163,20 @@
         android:text="Sign Up with"
         android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/faceBook_option_registration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/bg1"
-            android:drawableTop="@drawable/fb_logo"
-            android:gravity="center"
-            android:paddingVertical="10dp"
-            android:text="facebook"
-            android:textColor="#000000" />
+    <TextView
+        android:id="@+id/faceBook_option_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg1"
+        android:drawableTop="@drawable/fb_logo"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="facebook"
+        android:textColor="#000000" />
 
 
 </RelativeLayout>

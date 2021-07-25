@@ -6,32 +6,33 @@
     android:orientation="vertical"
     tools:context=".SplashScreen">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/registrationTopBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/actionbar"
+        android:orientation="horizontal"
         android:padding="16dp">
 
+
         <ImageView
-            android:id="@+id/ivArrowBack"
+            android:id="@+id/ivRegistrationArrowBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_gravity="center"
             android:src="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
-            android:id="@+id/tvLoginActionBar"
+            android:id="@+id/Registration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/ivArrowBack"
-            android:layout_toRightOf="@+id/ivArrowBack"
-            android:text="Login to Shopclues"
+            android:text="Login to ShopClues"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <EditText
@@ -94,14 +95,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etEnterPassword"
-        android:layout_marginLeft="10dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="44dp"
-        android:layout_marginBottom="40dp"
         android:background="@drawable/button_style_loginvia_otp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
+        android:gravity="center"
         android:text="Login "
         android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         android:visibility="gone" />
 
     <LinearLayout
@@ -126,11 +127,12 @@
             android:id="@+id/tvRegisterNow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="5dp"
             android:layout_toEndOf="@id/tvDoNotHaveAccount"
             android:layout_toRightOf="@id/tvDoNotHaveAccount"
             android:text="Register Now"
-            android:textColor="@color/cyan" />
+            android:textColor="@color/cyan"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView

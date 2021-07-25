@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SubmitQueryEffect">
+
+    <LinearLayout
+        android:id="@+id/queryReceiveAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mail_receive" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Your Query has been received"
+            android:textColor="@color/cyan"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="We will get back to you soon"
+            android:textColor="@color/darkOrange"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/queryReceiveOkBtn"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/queryReceiveAnimation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/submit_bg"
+        android:text="Ok" />
+</RelativeLayout>

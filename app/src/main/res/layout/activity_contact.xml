@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyan"
+    android:orientation="vertical"
+    tools:context=".Contact">
+
+    <RelativeLayout
+        android:id="@+id/contactTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/main_logo" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/contactTopBar"
+        android:background="#090909" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/contactTopBar"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="Contact Us"
+            android:textAlignment="center"
+            android:textColor="@color/darkOrange"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg1"
+            android:hint="Enter Your Name"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg1"
+            android:hint="Enter Your Email"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg1"
+            android:hint="Enter Your Phone Number"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg1"
+            android:hint="Enter Your Query Subject"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg1"
+            android:hint="          Enter Your Message here. . . . ."
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/submit_bg"
+        android:paddingVertical="15dp"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</RelativeLayout>
