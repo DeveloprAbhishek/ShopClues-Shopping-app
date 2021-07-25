@@ -55,19 +55,45 @@
             android:layout_height="match_parent"
             android:paddingVertical="10dp">
 
-            <ImageView
-                android:id="@+id/ivProductImage"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/productCard"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginVertical="10dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/product1" />
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginVertical="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/product1" />
+
+                <ImageView
+                    android:id="@+id/favorite_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/favorite_blank_icon" />
+
+                <ImageView
+                    android:id="@+id/share_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvProductTitle"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/share_icon" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tvProductTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ivProductImage"
+                android:layout_below="@id/productCard"
                 android:layout_margin="10dp"
                 android:text="Men Blue Shirt Stylish Shirt-Full sleeve"
                 android:textColor="#000000"
@@ -136,25 +162,6 @@
                 android:textSize="22dp"
                 android:textStyle="bold" />
 
-
-            <ImageView
-                android:id="@+id/favorite_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/share_icon"
-                android:layout_marginVertical="20dp"
-                android:layout_marginLeft="130dp"
-                android:layout_toRightOf="@id/tvProductDiscount"
-                android:src="@drawable/favorite_blank_icon" />
-
-            <ImageView
-                android:id="@+id/share_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/tvProductTitle"
-                android:layout_alignLeft="@id/favorite_icon"
-                android:layout_marginBottom="60dp"
-                android:src="@drawable/share_icon" />
 
             <TextView
                 android:id="@+id/size_section"
@@ -343,5 +350,41 @@
             android:text="Buy Now"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvShopMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buy_btn_bg_2"
+            android:gravity="center_horizontal"
+            android:paddingVertical="10dp"
+            android:text="Shop More"
+            android:textColor="#E17136"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvGoToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cart_btn_bg_2"
+            android:gravity="center_horizontal"
+            android:paddingVertical="10dp"
+            android:text="Go To Cart"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:visibility="gone" />
     </LinearLayout>
 </RelativeLayout>

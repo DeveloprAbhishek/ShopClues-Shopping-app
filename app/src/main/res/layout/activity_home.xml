@@ -20,28 +20,30 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar" >
+            app:popupTheme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="1dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dp"
                     android:src="@drawable/main_logo" />
 
                 <ImageView
-
+                    android:id="@+id/notificationIcon"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:layout_alignTop="@id/cart_icon"
-                    android:layout_toLeftOf="@id/cart_icon"
+                    android:layout_alignTop="@id/CartIcon"
+                    android:layout_toLeftOf="@id/CartIcon"
                     android:src="@drawable/notification_icon" />
 
 
                 <ImageView
-                    android:id="@+id/cart_icon"
+                    android:id="@+id/CartIcon"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:layout_alignParentRight="true"
@@ -66,11 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
-            app:menu="@menu/bottom_navigation_menu"
+            android:theme="@style/ThemeOverlay.AppCompat"
             app:itemBackground="@color/white"
             app:itemIconTint="@color/cyan"
             app:itemTextColor="@color/cyan"
-            android:theme="@style/ThemeOverlay.AppCompat"/>
+            app:menu="@menu/bottom_navigation_menu" />
     </RelativeLayout>
 
 

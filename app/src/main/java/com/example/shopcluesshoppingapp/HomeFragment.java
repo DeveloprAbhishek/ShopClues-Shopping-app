@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements ProductClickListener {
+public class  HomeFragment extends Fragment implements ProductClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -186,8 +186,8 @@ public class HomeFragment extends Fragment implements ProductClickListener {
 //            }
 //        });
         Intent gotoProductDetails = new Intent(getContext(), ProductDetail.class);
-        gotoProductDetails.putExtra("img", layouts.get(position).getImage());
-        gotoProductDetails.putExtra("name", layouts.get(position).getName());
+        gotoProductDetails.putExtra("image", layouts.get(position).getImage());
+        gotoProductDetails.putExtra("title", layouts.get(position).getName());
         gotoProductDetails.putExtra("desc", layouts.get(position).getDescription());
         gotoProductDetails.putExtra("price", layouts.get(position).getPrice());
         gotoProductDetails.putExtra("actualPrice", layouts.get(position).getActualPrice());

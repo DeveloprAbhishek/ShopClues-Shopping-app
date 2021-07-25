@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
@@ -24,16 +23,13 @@ import com.razorpay.PaymentResultListener;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class ProductDetail extends AppCompatActivity implements View.OnClickListener, PaymentResultListener {
     private ImageView mIvProductImage, mIvCartBtn, favoriteIcon, shareIcon;
-    private TextView mTvProductName, mTvPrice, mTvActualPrice, mTvProductDiscount, mTvBuyBtn, mTvAddCartBtn;
+    private TextView mTvProductName, mTvPrice, mTvActualPrice, mTvProductDiscount, mTvBuyBtn, mTvAddCartBtn, mTvDescription;
     private RatingBar mRbRatingBar;
     private TextView mTvShopMore, mTvGoToCart;
 
-    private String productTitle,  productImage;
+    private String productTitle, productImage,productDescription;
     private int productPrice, productOffer;
     private float productRating;
 
@@ -56,6 +52,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         mIvCartBtn = findViewById(R.id.ivCartBtn);
         mTvActualPrice = findViewById(R.id.ivProductActualPrice);
         mTvProductDiscount = findViewById(R.id.tvProductDiscount);
+        mTvDescription=findViewById(R.id.description);
 
         favoriteIcon = findViewById(R.id.favorite_icon);
         shareIcon = findViewById(R.id.share_icon);
@@ -76,6 +73,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     private void getIntentData() {
         productTitle = getIntent().getStringExtra("title");
         productImage = getIntent().getStringExtra("image");
+        productDescription = getIntent().getStringExtra("desc");
         productPrice = getIntent().getIntExtra("price", -1);
         productOffer = getIntent().getIntExtra("offer", 1);
         productRating = (float) getIntent().getDoubleExtra("rating", -1);
@@ -103,12 +101,12 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
             Intent shareProduct = new Intent(android.content.Intent.ACTION_SEND);
             shareProduct.setType("txt/plain");
             startActivity(Intent.createChooser(shareProduct, "Share Product Via"));
-        } else if(v.getId() == R.id.favorite_icon) {
+        } else if (v.getId() == R.id.favorite_icon) {
             favoriteIcon.setImageResource(R.drawable.favorite_icon);
             Toast.makeText(ProductDetail.this, "Item Added to Favorite", Toast.LENGTH_SHORT).show();
-        } else if(v.getId() == R.id.tvShopMore) {
+        } else if (v.getId() == R.id.tvShopMore) {
             startActivity(new Intent(ProductDetail.this, HomeFragment.class));
-        } else if(v.getId() == R.id.tvGoToCart) {
+        } else if (v.getId() == R.id.tvGoToCart) {
             startActivity(new Intent(ProductDetail.this, CartLayout.class));
         }
     }
@@ -139,7 +137,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
     }
 
     private void startPayment() {
-        String  amtStr = Integer.toString(productPrice*100);
+        String amtStr = Integer.toString(productPrice * 100);
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_test_MVo8XLbqFup11L");
         checkout.setImage(R.drawable.rzp_logo);
@@ -155,7 +153,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
             options.put("currency", "INR");
             options.put("amount", amtStr);//pass amount in currency subunits
             options.put("prefill.email", "gaurav.kumar@example.com");
-            options.put("prefill.contact","7777011329");
+            options.put("prefill.contact", "7777011329");
             JSONObject retryObj = new JSONObject();
             retryObj.put("enabled", true);
             retryObj.put("max_count", 4);
@@ -163,7 +161,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
 
             checkout.open(activity, options);
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.e("TAG Payment", "Error in starting Razorpay Checkout", e);
         }
     }
