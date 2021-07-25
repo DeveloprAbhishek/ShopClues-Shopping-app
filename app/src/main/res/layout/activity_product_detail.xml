@@ -50,8 +50,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingVertical="10dp">
+            android:layout_height="match_parent">
+
 
             <ImageView
                 android:id="@+id/ivProductImage"
@@ -258,7 +258,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/cart_btn_bg_2"
+            android:background="@drawable/button_style_loginvia_otp"
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
             android:text="Buy Now"

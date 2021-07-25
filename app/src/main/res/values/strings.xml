@@ -31,5 +31,7 @@
     <string name="_150"><strike>$150</strike></string>
     <string name="refer_earn"><![CDATA[Refer & Earn]]></string>
     <string name="help_support"><![CDATA[Help & Support]]></string>
-    <string name ="rs">\u20B9</string>
+    <string name="rs">\u20B9</string>
+    <string name="buy_earn"><![CDATA[BUY & EARN]]></string>
+    <string name="save_continue"><![CDATA[Save & Continue]]></string>
 </resources>

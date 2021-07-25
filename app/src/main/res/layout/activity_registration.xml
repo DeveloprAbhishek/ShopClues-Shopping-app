@@ -44,12 +44,7 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="103dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:src="@drawable/loyalty_point" />
+
 
             <ImageView
                 android:layout_width="match_parent"
@@ -62,8 +57,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="103dp"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:src="@drawable/offers" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/loyalty_point" />
 
         </LinearLayout>
 
