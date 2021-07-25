@@ -119,7 +119,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
         } else if(v.getId() == R.id.favorite_icon) {
             wishlistCreate();
         } else if(v.getId() == R.id.tvShopMore) {
-            startActivity(new Intent(ProductDetail.this, HomeFragment.class));
+            startActivity(new Intent(ProductDetail.this, HomeActivity.class));
         } else if(v.getId() == R.id.tvGoToCart) {
             startActivity(new Intent(ProductDetail.this, CartLayout.class));
         }

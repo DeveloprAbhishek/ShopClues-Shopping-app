@@ -129,7 +129,7 @@ public class HomeActivity extends AppCompatActivity {
                     isWishlistDataAvailable = true;
                     bnv.getMenu().getItem(3).setIcon(R.drawable.favorite_blank_icon);
                     bnv.getMenu().getItem(3).setTitle("Wishlist");
-                    bnv.getOrCreateBadge(R.id.bottomNavOffers).setNumber(2);
+//                    bnv.getOrCreateBadge(R.id.bottomNavOffers).setNumber(2);
                 }
             }
 

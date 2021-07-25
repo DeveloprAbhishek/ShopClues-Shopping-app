@@ -119,7 +119,7 @@ public class OffersFragment extends Fragment implements OffersClickListener{
     @Override
     public void onOfferClick(OffersModel model) {
         Intent goToOfferDetailPage = new Intent(getContext(), ProductDetail.class);
-        goToOfferDetailPage.putExtra("title", model.getTitle().toString());
+        goToOfferDetailPage.putExtra("title", model.getTitle());
         goToOfferDetailPage.putExtra("image", model.getImage());
         goToOfferDetailPage.putExtra("price", model.getPrice());
         goToOfferDetailPage.putExtra("offer", model.getOffer());

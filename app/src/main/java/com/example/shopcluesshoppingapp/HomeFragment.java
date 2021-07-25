@@ -2,26 +2,28 @@ package com.example.shopcluesshoppingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class  HomeFragment extends Fragment implements ProductClickListener {
+public class HomeFragment extends Fragment implements ProductClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,6 +44,10 @@ public class  HomeFragment extends Fragment implements ProductClickListener {
     private TextView discount;
     private TextView buyButton;
     private TextView addToCartButton;
+    private ViewPager slider;
+    private ArrayList<Integer> images;
+    private Handler handler;
+    private Timer timer;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -81,7 +87,10 @@ public class  HomeFragment extends Fragment implements ProductClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         initViews(view);
         buildList();
-        setRecyclerView();
+//        setRecyclerView();
+        buildSliderList();
+        setSlider();
+        setSliderAnimation();
         return view;
     }
 
@@ -94,8 +103,7 @@ public class  HomeFragment extends Fragment implements ProductClickListener {
         discount = view.findViewById(R.id.discount);
         buyButton = view.findViewById(R.id.buy_btn);
         addToCartButton = view.findViewById(R.id.cart_btn);
-
-
+        slider = view.findViewById(R.id.bannerSlider);
     }
 
 
@@ -193,5 +201,45 @@ public class  HomeFragment extends Fragment implements ProductClickListener {
         gotoProductDetails.putExtra("actualPrice", layouts.get(position).getActualPrice());
         gotoProductDetails.putExtra("discount", layouts.get(position).getDiscount());
         startActivity(gotoProductDetails);
+    }
+
+    private void setSlider() {
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+        slider.setAdapter(sliderAdapter);
+    }
+
+    private void buildSliderList() {
+        images = new ArrayList<>();
+        images.add(R.drawable.offer_1);
+        images.add(R.drawable.offer_2);
+        images.add(R.drawable.offer_3);
+        images.add(R.drawable.offer_4);
+        images.add(R.drawable.offer_5);
+
+    }
+
+    private void setSliderAnimation() {
+        handler = new Handler();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        int value = slider.getCurrentItem();
+                        if (value == images.size() - 1) {
+                            value = 0;
+                            slider.setCurrentItem(value);
+
+                        } else {
+                            value++;
+                            slider.setCurrentItem(value);
+                        }
+                    }
+                });
+            }
+        }, 5000, 5000);
+
     }
 }

@@ -7,11 +7,11 @@
         <menu>
             <item
                 android:id="@+id/categoryMensTShirt"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/t_shirt_store_icon"
                 android:title="T-Shirt Store" />
             <item
                 android:id="@+id/categoryMensClothing"
-                android:icon="@drawable/home_icon"
+                android:icon="@drawable/account_icon"
                 android:title="Clothing" />
             <item
                 android:id="@+id/categoryMensFootwear"
