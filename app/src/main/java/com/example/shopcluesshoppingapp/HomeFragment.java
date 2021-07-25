@@ -240,6 +240,5 @@ public class HomeFragment extends Fragment implements ProductClickListener {
                 });
             }
         }, 5000, 5000);
-
     }
 }
