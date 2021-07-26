@@ -230,11 +230,11 @@ public class HomeFragment extends Fragment implements ProductClickListener {
                         int value = slider.getCurrentItem();
                         if (value == images.size() - 1) {
                             value = 0;
-                            slider.setCurrentItem(value);
+                            slider.setCurrentItem(value,true);
 
                         } else {
                             value++;
-                            slider.setCurrentItem(value);
+                            slider.setCurrentItem(value,true);
                         }
                     }
                 });

@@ -21,8 +21,9 @@
         android:id="@+id/bottomNavOffers"
         android:enabled="true"
         android:icon="@drawable/offer_icon"
+        app:showAsAction="always"
         android:title="Offers"
-        app:actionLayout="@layout/badge_action_item"/>
+        app:actionLayout="@layout/cart_badge_action"/>
     <item
         android:id="@+id/bottomNavAccount"
         android:enabled="true"
