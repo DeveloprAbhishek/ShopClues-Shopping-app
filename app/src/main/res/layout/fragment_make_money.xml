@@ -6,4 +6,9 @@
     tools:context=".MakeMoneyFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/make_money"/>
 </RelativeLayout>

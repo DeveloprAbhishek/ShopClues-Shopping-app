@@ -1,5 +1,6 @@
 package com.example.shopcluesshoppingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,13 +8,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.google.android.gms.auth.api.accounttransfer.AccountTransfer;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AccountFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AccountFragment extends Fragment {
+public class AccountFragment extends Fragment implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +30,9 @@ public class AccountFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+    private RelativeLayout mRvHelpSupport, mRvMyOrder, mRvWishlist, logout;
+    private FirebaseAuth mAuth;
     public AccountFragment() {
         // Required empty public constructor
     }
@@ -59,6 +68,35 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        initViews(view);
+        return view;
+    }
+
+    private void initViews(View view) {
+        mRvHelpSupport = view.findViewById(R.id.rvHelpSupport);
+        mRvMyOrder = view.findViewById(R.id.rvMyOrder);
+        mRvWishlist = view.findViewById(R.id.rvWishlist);
+        logout = view.findViewById(R.id.logOut);
+
+        mRvHelpSupport.setOnClickListener(this);
+        mRvMyOrder.setOnClickListener(this);
+        mRvWishlist.setOnClickListener(this);
+        logout.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.rvHelpSupport) {
+            startActivity(new Intent(getContext(), Contact.class));
+        } else if(v.getId() == R.id.rvMyOrder) {
+            startActivity(new Intent(getContext(), OrderActivity.class));
+        }else if(v.getId() == R.id.rvWishlist) {
+
+        } else if(v.getId() == R.id.logOut) {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getContext(), "You have logged out.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getContext(), LogInActivity.class));
+        }
     }
 }

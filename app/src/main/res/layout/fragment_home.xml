@@ -156,52 +156,66 @@
 
             </HorizontalScrollView>
 
-            <HorizontalScrollView
 
-                android:id="@+id/bannerView"
+            <!--            <HorizontalScrollView-->
+
+            <!--                android:id="@+id/bannerSlider"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/categoryScroll">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                                        <ImageView-->
+            <!--                                            android:layout_width="410dp"-->
+            <!--                                            android:layout_height="200dp"-->
+            <!--                                            android:src="@drawable/offer_1" />-->
+
+            <!--                                        <ImageView-->
+            <!--                                            android:layout_width="410dp"-->
+            <!--                                            android:layout_height="200dp"-->
+            <!--                                            android:src="@drawable/offer_2" />-->
+
+            <!--                                        <ImageView-->
+            <!--                                            android:layout_width="410dp"-->
+            <!--                                            android:layout_height="200dp"-->
+            <!--                                            android:src="@drawable/offer_3" />-->
+
+            <!--                                        <ImageView-->
+            <!--                                            android:layout_width="410dp"-->
+            <!--                                            android:layout_height="200dp"-->
+            <!--                                            android:src="@drawable/offer_4" />-->
+
+            <!--                                        <ImageView-->
+            <!--                                            android:layout_width="410dp"-->
+            <!--                                            android:layout_height="200dp"-->
+            <!--                                            android:src="@drawable/offer_5" />-->
+
+            <!--                    <androidx.viewpager.widget.ViewPager-->
+            <!--                        android:id="@+id/bannerSlider"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="250dp" />-->
+            <!--                    -->
+
+            <!--                </LinearLayout>-->
+            <!--            </HorizontalScrollView>-->
+
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/bannerSlider"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/categoryScroll">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="410dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/offer_1" />
-
-                    <ImageView
-                        android:layout_width="410dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/offer_2" />
-
-                    <ImageView
-                        android:layout_width="410dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/offer_3" />
-
-                    <ImageView
-                        android:layout_width="410dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/offer_4" />
-
-                    <ImageView
-                        android:layout_width="410dp"
-                        android:layout_height="200dp"
-                        android:src="@drawable/offer_5" />
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
+                android:layout_height="250dp"
+                android:layout_below="@id/categoryScroll" />
 
             <TextView
                 android:id="@+id/mall_heading"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_below="@id/bannerView"
+                android:layout_below="@id/bannerSlider"
                 android:layout_marginLeft="10dp"
                 android:background="#FFFFFF"
                 android:gravity="center_vertical"
@@ -547,7 +561,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_below="@id/bannerView"
+                    android:layout_below="@id/bannerSlider"
                     android:layout_marginLeft="10dp"
                     android:background="#FFFFFF"
                     android:gravity="center_vertical"
@@ -630,7 +644,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_below="@id/bannerView"
+                    android:layout_below="@id/bannerSlider"
                     android:layout_marginLeft="10dp"
                     android:background="#FFFFFF"
                     android:gravity="center_vertical"
@@ -751,12 +765,12 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/small_banner"
-                android:orientation="vertical" />
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/recyclerView"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/small_banner"-->
+            <!--                android:orientation="vertical" />-->
 
 
         </RelativeLayout>

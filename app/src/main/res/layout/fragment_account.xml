@@ -15,6 +15,7 @@
             android:layout_height="wrap_content">
 
 
+
             <RelativeLayout
                 android:id="@+id/secondView"
                 android:layout_width="match_parent"
@@ -99,7 +100,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relative1"
+                android:id="@+id/rvMyOrder"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_below="@+id/secondView">
@@ -126,10 +127,10 @@
                     android:textSize="16dp" />
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/relative2"
+                android:id="@+id/rvWishlist"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/relative1">
+                android:layout_below="@+id/rvMyOrder">
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="20dp"
@@ -155,7 +156,7 @@
                 android:id="@+id/relative3"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/relative2">
+                android:layout_below="@+id/rvWishlist">
                 <ImageView
                     android:id="@+id/textView3"
                     android:layout_width="20dp"
@@ -360,7 +361,7 @@
                     android:textSize="16dp" />
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/relative11"
+                android:id="@+id/rvHelpSupport"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_below="@+id/relative10">
@@ -384,10 +385,10 @@
                     android:textSize="16dp" />
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/relative12"
+                android:id="@+id/logOut"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/relative11">
+                android:layout_below="@+id/rvHelpSupport">
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="20dp"
@@ -403,7 +404,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="50dp"
-                    android:text="Rate the App"
+                    android:text="Logout"
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 

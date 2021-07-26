@@ -1,13 +1,13 @@
 package com.example.shopcluesshoppingapp;
 
-public class CartModel {
+public class OrderModel {
     String title, image, key;
     int price;
 
-    public CartModel() {
+    public OrderModel() {
     }
 
-    public CartModel(String title, String image, int price, String key) {
+    public OrderModel(String title, String image, int price, String key) {
         this.title = title;
         this.image = image;
         this.price = price;

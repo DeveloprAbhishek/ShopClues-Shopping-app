@@ -3,10 +3,12 @@ package com.example.shopcluesshoppingapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,17 @@ import android.widget.ProgressBar;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +47,9 @@ public class Wishlist extends Fragment implements onWishlistClickListener{
     private RecyclerView recyclerView;
     private WishlistAdapter wishlistAdapter;
     private ProgressBar progressBar;
+
+    private FirebaseAuth mAuth;
+    private String userId;
     public Wishlist() {
         // Required empty public constructor
     }
@@ -75,9 +88,6 @@ public class Wishlist extends Fragment implements onWishlistClickListener{
         View view = inflater.inflate(R.layout.fragment_wishlist, container, false);
         initViews(view);
         getDataFromFirebase();
-        //buildList();
-        //setRecyclerView();
-
         return view;
     }
 
@@ -97,14 +107,15 @@ public class Wishlist extends Fragment implements onWishlistClickListener{
         recyclerView = view.findViewById(R.id.recyclerView);
         progressBar = view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
+
+        mAuth = FirebaseAuth.getInstance();
+        userId = mAuth.getUid();
+        checkWishlistData();
     }
 
     void getDataFromFirebase() {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("wishlist");
-
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("wishlist").child(userId);
         FirebaseRecyclerOptions<OffersModel> options =
                 new FirebaseRecyclerOptions.Builder<OffersModel>()
                         .setQuery(myRef, OffersModel.class)
@@ -112,7 +123,6 @@ public class Wishlist extends Fragment implements onWishlistClickListener{
         wishlistAdapter = new WishlistAdapter(options, this, progressBar);
         recyclerView.setAdapter(wishlistAdapter);
     }
-
 
     @Override
     public void onWishlistItemClicked(int Position, OffersModel model, String key) {
@@ -122,19 +132,36 @@ public class Wishlist extends Fragment implements onWishlistClickListener{
         goToOfferDetailPage.putExtra("price", model.getPrice());
         goToOfferDetailPage.putExtra("offer", model.getOffer());
         goToOfferDetailPage.putExtra("rating", model.getRating());
-        goToOfferDetailPage.putExtra("isWishlist", true);
         goToOfferDetailPage.putExtra("key", model.getKey());
         startActivity(goToOfferDetailPage);
     }
 
     @Override
     public void onClickBuyButton(int Position, OffersModel model, String key) {
-
+        startActivity(new Intent(getContext(), EditAddress.class));
     }
 
     @Override
     public void onClickHeartIcon(int Position, OffersModel model, String key) {
+        FirebaseDatabase.getInstance().getReference().child("wishlist").child(userId).child(key).removeValue();
+        checkWishlistData();
+    }
 
-        FirebaseDatabase.getInstance().getReference().child("wishlist").child(key).removeValue();
+    void checkWishlistData() {
+        FirebaseDatabase.getInstance().getReference("wishlist").child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
+                Log.d("TAG", "Value is: " + map);
+                if(map == null) {
+                    startActivity(new Intent(getContext(), EmptyWishList.class));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }
