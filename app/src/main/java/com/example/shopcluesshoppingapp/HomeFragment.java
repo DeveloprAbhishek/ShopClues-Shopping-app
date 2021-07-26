@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -23,7 +25,7 @@ import java.util.TimerTask;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements ProductClickListener {
+public class  HomeFragment extends Fragment implements ProductClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,7 +50,6 @@ public class HomeFragment extends Fragment implements ProductClickListener {
     private ArrayList<Integer> images;
     private Handler handler;
     private Timer timer;
-
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -87,7 +88,7 @@ public class HomeFragment extends Fragment implements ProductClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         initViews(view);
         buildList();
-//        setRecyclerView();
+
         buildSliderList();
         setSlider();
         setSliderAnimation();
@@ -104,6 +105,8 @@ public class HomeFragment extends Fragment implements ProductClickListener {
         buyButton = view.findViewById(R.id.buy_btn);
         addToCartButton = view.findViewById(R.id.cart_btn);
         slider = view.findViewById(R.id.bannerSlider);
+
+
     }
 
 
@@ -230,11 +233,11 @@ public class HomeFragment extends Fragment implements ProductClickListener {
                         int value = slider.getCurrentItem();
                         if (value == images.size() - 1) {
                             value = 0;
-                            slider.setCurrentItem(value,true);
+                            slider.setCurrentItem(value);
 
                         } else {
                             value++;
-                            slider.setCurrentItem(value,true);
+                            slider.setCurrentItem(value);
                         }
                     }
                 });
