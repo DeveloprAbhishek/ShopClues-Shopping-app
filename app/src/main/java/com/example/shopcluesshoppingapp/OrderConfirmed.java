@@ -27,7 +27,7 @@ public class OrderConfirmed extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if(R.id.btnContinueShopping == v.getId()) {
-            startActivity(new Intent(this, HomeFragment.class));
+            startActivity(new Intent(this, HomeActivity.class));
         } else if(v.getId() == R.id.btnTrackOrder) {
             startActivity(new Intent(this, OrderActivity.class));
         }

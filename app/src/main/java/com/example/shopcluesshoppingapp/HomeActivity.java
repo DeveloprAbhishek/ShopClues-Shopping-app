@@ -7,23 +7,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.shopcluesshoppingapp.databinding.ActivityHomeBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
@@ -31,7 +24,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
-import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -50,20 +41,14 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ImageView mIvCartIcon;
     boolean isWishlistDataAvailable;
-    private FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         checkWishlistData();
-        initViews();
-    }
 
-    private void initViews() {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-
         mIvCartIcon = findViewById(R.id.ivCartIcon);
         mIvCartIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +57,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-            nav = findViewById(R.id.nav_view);
+        nav = findViewById(R.id.nav_view);
         drawerLayout = findViewById(R.id.drawerLayout);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, myToolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -93,6 +78,8 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.FrameContainer, new HomeFragment()).commit();
         bnv = findViewById(R.id.bottom_navigation);
@@ -121,21 +108,15 @@ public class HomeActivity extends AppCompatActivity {
                         temp = new AccountFragment();
                         break;
                 }
-
                 getSupportFragmentManager().beginTransaction().replace(R.id.FrameContainer, temp).commit();
                 return true;
             }
         });
     }
 
-
-
-
     void checkWishlistData() {
-        mAuth = FirebaseAuth.getInstance();
-        String userId = mAuth.getUid();
 
-        FirebaseDatabase.getInstance().getReference("wishlist").child(userId).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("wishlist").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
@@ -148,8 +129,10 @@ public class HomeActivity extends AppCompatActivity {
                     isWishlistDataAvailable = true;
                     bnv.getMenu().getItem(3).setIcon(R.drawable.favorite_blank_icon);
                     bnv.getMenu().getItem(3).setTitle("Wishlist");
+                  //  bnv.getOrCreateBadge(R.id.bottomNavOffers).setNumber(2);
                 }
             }
+
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
 

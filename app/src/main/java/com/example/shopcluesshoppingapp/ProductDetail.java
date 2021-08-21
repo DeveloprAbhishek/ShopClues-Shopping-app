@@ -143,7 +143,7 @@ public class ProductDetail extends AppCompatActivity implements View.OnClickList
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(ProductDetail.this, "Added to Wishlist", Toast.LENGTH_SHORT).show();
-                //setUserCartGrandTotal();
+                setUserCartGrandTotal();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
