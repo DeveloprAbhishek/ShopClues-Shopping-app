@@ -54,6 +54,7 @@
         android:layout_marginVertical="40dp"
         android:weightSum="2">
         <Button
+            android:id="@+id/btnTrackOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,6 +66,7 @@
             android:background="@drawable/button_style_loginvia_otp"/>
 
         <Button
+            android:id="@+id/btnContinueShopping"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

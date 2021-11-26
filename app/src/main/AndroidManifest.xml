@@ -3,6 +3,7 @@
     package="com.example.shopcluesshoppingapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopCluesShoppingApp">
-        <activity android:name=".EmptyOrder"></activity>
+        <activity android:name=".CategoryDataShowingActivity"></activity>
+        <activity android:name=".OrderConfirmed" />
+        <activity android:name=".PaymentGateway" />
+        <activity android:name=".EditAddress" />
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".EmptyOrder" />
         <activity android:name=".EmptyWishList" />
         <activity android:name=".MessageSentSuccessful" />
         <activity android:name=".SubmitQueryEffect" />
@@ -19,15 +25,7 @@
         <activity android:name=".EmptyCart" />
         <activity android:name=".CartLayout" />
         <activity android:name=".ProductDetail" />
-        <activity android:name=".HomeActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".SplashScreen">

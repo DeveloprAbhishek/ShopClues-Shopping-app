@@ -114,6 +114,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/razorPay"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:gravity="center_vertical"
@@ -122,7 +123,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Wallet"
+                android:text="Razor Pay"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"

@@ -7,19 +7,15 @@
         <menu>
             <item
                 android:id="@+id/categoryMensTShirt"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="T-Shirt Store" />
             <item
                 android:id="@+id/categoryMensClothing"
-                android:icon="@drawable/home_icon"
                 android:title="Clothing" />
             <item
                 android:id="@+id/categoryMensFootwear"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="Footwear" />
             <item
                 android:id="@+id/categoryMensWatches"
-                android:icon="@drawable/home_icon"
                 android:title="Watches" />
         </menu>
     </item>
@@ -30,19 +26,15 @@
         <menu>
             <item
                 android:id="@+id/categoryWomenClothing"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="Clothing" />
             <item
                 android:id="@+id/categoryWomenJewellery"
-                android:icon="@drawable/home_icon"
                 android:title="Jewellery" />
             <item
                 android:id="@+id/categoryWomenFootwear"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="Footwear" />
             <item
                 android:id="@+id/categoryWomenBeauty"
-                android:icon="@drawable/home_icon"
                 android:title="Beauty" />
         </menu>
     </item>
@@ -53,19 +45,15 @@
         <menu>
             <item
                 android:id="@+id/categoryMobileSmartphones"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="Smartphones" />
             <item
                 android:id="@+id/categoryMobileTablets"
-                android:icon="@drawable/home_icon"
                 android:title="Tablets" />
             <item
                 android:id="@+id/categoryMobileHeadphones"
-                android:icon="@drawable/ic_menu_manage"
                 android:title="@string/headphones_earphones" />
             <item
                 android:id="@+id/categoryMobilePowerbank"
-                android:icon="@drawable/home_icon"
                 android:title="Power Bank" />
         </menu>
     </item>

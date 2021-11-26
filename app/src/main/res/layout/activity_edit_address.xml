@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Pincode"
+                android:inputType="number"
                 android:layout_marginLeft="10dp"
                 android:background="@color/Transparent"/>
 
@@ -72,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
+                android:inputType="number"
                 android:layout_marginLeft="10dp"
                 android:background="@color/Transparent"/>
 

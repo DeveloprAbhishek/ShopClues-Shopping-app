@@ -38,7 +38,7 @@ public class CartAdapter extends  FirebaseRecyclerAdapter<CartModel, CartViewHol
     @Override
     protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NotNull CartModel model) {
         String key = getRef(position).getKey();
-        holder.setData(model, position, key);
+        holder.setData(model, position);
         progressBar.setVisibility(View.GONE);
     }
 

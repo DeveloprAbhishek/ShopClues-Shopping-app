@@ -13,16 +13,17 @@ import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     ArrayList<CategoryModel> categoryModelsList;
-
-    public CategoryAdapter(ArrayList<CategoryModel> categoryModelsList) {
+    CategoryClickListener categoryClickListener;
+    public CategoryAdapter(ArrayList<CategoryModel> categoryModelsList, CategoryClickListener categoryClickListener) {
         this.categoryModelsList = categoryModelsList;
+        this.categoryClickListener = categoryClickListener;
     }
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_layout_recyclerview, parent, false);
-        return new CategoryViewHolder(view);
+        return new CategoryViewHolder(view, categoryClickListener);
     }
 
     @Override

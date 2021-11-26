@@ -73,12 +73,9 @@ public class OffersFragment extends Fragment implements OffersClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_offers, container, false);
         initViews(view);
         getDataFromFirebase();
-        //buildList();
-        //setRecyclerView();
 
         return view;
     }
@@ -103,9 +100,7 @@ public class OffersFragment extends Fragment implements OffersClickListener{
 
     void getDataFromFirebase() {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("offers");
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("offers");
 
         FirebaseRecyclerOptions<OffersModel> options =
                 new FirebaseRecyclerOptions.Builder<OffersModel>()
@@ -119,12 +114,11 @@ public class OffersFragment extends Fragment implements OffersClickListener{
     @Override
     public void onOfferClick(OffersModel model) {
         Intent goToOfferDetailPage = new Intent(getContext(), ProductDetail.class);
-        goToOfferDetailPage.putExtra("title", model.getTitle().toString());
+        goToOfferDetailPage.putExtra("title", model.getTitle());
         goToOfferDetailPage.putExtra("image", model.getImage());
         goToOfferDetailPage.putExtra("price", model.getPrice());
         goToOfferDetailPage.putExtra("offer", model.getOffer());
         goToOfferDetailPage.putExtra("rating", model.getRating());
-        goToOfferDetailPage.putExtra("key", model.getKey());
         startActivity(goToOfferDetailPage);
     }
 }

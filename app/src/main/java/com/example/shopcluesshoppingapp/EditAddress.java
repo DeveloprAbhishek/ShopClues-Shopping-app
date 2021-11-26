@@ -15,12 +15,12 @@ public class EditAddress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_address);
         mBtnSaveContinue=findViewById(R.id.BtnSaveContinue);
+
         mBtnSaveContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditAddress.this,Wishlist.class);
+                Intent intent = new Intent(EditAddress.this,PaymentGateway.class);
                 startActivity(intent);
-
             }
         });
     }

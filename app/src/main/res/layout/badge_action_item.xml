@@ -2,27 +2,27 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:focusable="true"
     android:background="?attr/selectableItemBackground"
-    android:clipToPadding="false">
-
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:padding="15dp">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/favorite_blank_icon"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:src="@drawable/cart_icon" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="3"
-        android:gravity="center"
-        android:background="@drawable/badge_shape"
+        android:id="@+id/cartBadge"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:layout_gravity="top|end"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="16sp"/>
+        android:layout_marginTop="-5dp"
+        android:layout_marginRight="-5dp"
+        android:background="@drawable/badge_shape"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="#FFFFFF" />
 </FrameLayout>

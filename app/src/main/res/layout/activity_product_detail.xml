@@ -11,10 +11,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white" >
+        android:background="@color/white">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
@@ -45,27 +47,53 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:layout_marginBottom="50dp">
+        android:layout_above="@id/Buttons"
+        android:layout_below="@id/toolbar">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingVertical="10dp">
 
-
-            <ImageView
-                android:id="@+id/ivProductImage"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/productCard"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:scaleType="fitCenter"
-                android:layout_marginVertical="10dp"
-                android:src="@drawable/product1" />
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginVertical="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/product1" />
+
+                <ImageView
+                    android:id="@+id/favorite_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/favorite_blank_icon" />
+
+                <ImageView
+                    android:id="@+id/share_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvProductTitle"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/share_icon" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tvProductTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ivProductImage"
+                android:layout_below="@id/productCard"
                 android:layout_margin="10dp"
                 android:text="Men Blue Shirt Stylish Shirt-Full sleeve"
                 android:textColor="#000000"
@@ -79,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvProductTitle"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
                 android:minHeight="20dp"
                 android:numStars="5"
                 android:progressTint="#E88C03"
@@ -91,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rbOfferRating"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/rupees_icon_2"
                 android:text="599"
                 android:textColor="#FF5A00"
@@ -103,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rbOfferRating"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/tvProductPrice"
                 android:drawableLeft="@drawable/rupees_icon"
                 android:text="800"
@@ -115,52 +143,32 @@
                 android:layout_width="50dp"
                 android:layout_height="2dp"
                 android:layout_below="@id/rbOfferRating"
+
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:layout_toRightOf="@id/tvProductPrice"
-                android:background="#000000" />
+                android:background="#FD0101" />
 
             <TextView
                 android:id="@+id/tvProductDiscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/ivProductActualPrice"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_toRightOf="@id/ivProductActualPrice"
                 android:text="70% off"
                 android:textColor="#067F8C"
-                android:textSize="25dp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
 
-
-            <ImageView
-                android:id="@+id/favorite_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rbOfferRating"
-                android:layout_marginVertical="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_toRightOf="@id/tvProductDiscount"
-                android:src="@drawable/favorite_blank_icon" />
-
-            <ImageView
-                android:id="@+id/share_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/favorite_icon"
-                android:layout_alignLeft="@id/favorite_icon"
-                android:layout_marginVertical="20dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="39dp"
-                android:src="@drawable/share_icon" />
 
             <TextView
                 android:id="@+id/size_section"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvProductPrice"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="Select Size"
                 android:textColor="#000027"
                 android:textSize="20dp" />
@@ -228,6 +236,84 @@
                     android:textSize="15dp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/size_section"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dummmy_img1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg1"
+                    android:padding="10dp"
+                    android:text="Key Feature"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Product id : 1044545" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Print &amp; Patterns : Solid Blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Type : Shirt|Full Sleeve" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Neck-Line : V-Open" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Color : Blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:text="Sleeve length : Full-Sleeve" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/white_boundary_button"
+                    android:drawableRight="@drawable/right_arrow_icon"
+                    android:paddingVertical="2dp"
+                    android:text="view all details"
+                    android:textColor="#036397"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Odoky Summer's Cotton Blend Blue Shrug For Men" />
+
+            </LinearLayout>
 
         </RelativeLayout>
     </ScrollView>
@@ -258,7 +344,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/button_style_loginvia_otp"
+            android:background="@drawable/cart_btn_bg_2"
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
             android:text="Buy Now"
@@ -283,9 +369,9 @@
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
             android:text="Shop More"
-            android:visibility="gone"
             android:textColor="#E17136"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:visibility="gone" />
 
 
         <TextView
@@ -297,8 +383,8 @@
             android:gravity="center_horizontal"
             android:paddingVertical="10dp"
             android:text="Go To Cart"
-            android:visibility="gone"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:visibility="gone" />
     </LinearLayout>
 </RelativeLayout>
