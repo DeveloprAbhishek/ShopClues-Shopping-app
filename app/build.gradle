@@ -15,7 +15,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.shopcluesshoppingapp"
+        applicationId "com.janta.shopcluesshoppingapp"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -58,10 +58,13 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
+
     implementation 'com.google.firebase:firebase-analytics'
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
     implementation 'com.razorpay:checkout:1.6.6'
 }

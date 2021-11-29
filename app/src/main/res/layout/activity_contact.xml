@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/cyan"
     android:orientation="vertical"
-    tools:context=".Contact">
+    tools:context="com.janta.shopcluesshoppingapp.Contact">
 
     <RelativeLayout
         android:id="@+id/contactTopBar"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shopcluesshoppingapp">
+    package="com.janta.shopcluesshoppingapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -12,23 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopCluesShoppingApp">
-        <activity android:name=".CategoryDataShowingActivity"></activity>
-        <activity android:name=".OrderConfirmed" />
-        <activity android:name=".PaymentGateway" />
-        <activity android:name=".EditAddress" />
-        <activity android:name=".OrderActivity" />
-        <activity android:name=".EmptyOrder" />
-        <activity android:name=".EmptyWishList" />
-        <activity android:name=".MessageSentSuccessful" />
-        <activity android:name=".SubmitQueryEffect" />
-        <activity android:name=".Contact" />
-        <activity android:name=".EmptyCart" />
-        <activity android:name=".CartLayout" />
-        <activity android:name=".ProductDetail" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LogInActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name="com.janta.shopcluesshoppingapp.CategoryDataShowingActivity"></activity>
+        <activity android:name="com.janta.shopcluesshoppingapp.OrderConfirmed" />
+        <activity android:name="com.janta.shopcluesshoppingapp.PaymentGateway" />
+        <activity android:name="com.janta.shopcluesshoppingapp.EditAddress" />
+        <activity android:name="com.janta.shopcluesshoppingapp.OrderActivity" />
+        <activity android:name="com.janta.shopcluesshoppingapp.EmptyOrder" />
+        <activity android:name="com.janta.shopcluesshoppingapp.EmptyWishList" />
+        <activity android:name="com.janta.shopcluesshoppingapp.MessageSentSuccessful" />
+        <activity android:name="com.janta.shopcluesshoppingapp.SubmitQueryEffect" />
+        <activity android:name="com.janta.shopcluesshoppingapp.Contact" />
+        <activity android:name="com.janta.shopcluesshoppingapp.EmptyCart" />
+        <activity android:name="com.janta.shopcluesshoppingapp.CartLayout" />
+        <activity android:name="com.janta.shopcluesshoppingapp.ProductDetail" />
+        <activity android:name="com.janta.shopcluesshoppingapp.HomeActivity" />
+        <activity android:name="com.janta.shopcluesshoppingapp.RegistrationActivity" />
+        <activity android:name="com.janta.shopcluesshoppingapp.LogInActivity" />
+        <activity android:name="com.janta.shopcluesshoppingapp.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

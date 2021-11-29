@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LogInActivity">
+    tools:context="com.janta.shopcluesshoppingapp.LogInActivity">
 
     <LinearLayout
         android:id="@+id/registrationTopBar"
