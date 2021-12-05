@@ -16,7 +16,6 @@ Basic Function:-
 # [Download App from PlayStore](https://play.google.com/store/apps/details?id=com.janta.shopcluesshoppingapp)
 
 
-
 # Tech Stack ✨
 
 * [Android Studio](https://developer.android.com/studio)
